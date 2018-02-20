@@ -9,6 +9,7 @@ html {
 
 table{
     padding: auto;
+    margin: auto;
 }
 
 .table-headings{
@@ -29,6 +30,8 @@ table{
 
 .table-final-grade{
     text-align: right;
+    border-radius: 5px 5px;
+    padding: 5px;
 }
 
 .table-result:hover{
@@ -44,10 +47,40 @@ table{
     padding: 4px;
 }
 
+.btn{
+    display: flex;
+    margin: auto;
+    outline: none;
+    border: 0px solid;
+    border-radius: 15px 15px;
+    background-color: #548fed;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 12px;
+    color: white;
+    transition: .15s ease-in-out;
+}
+
+.btn:hover{
+    background-color: #89AFDB;
+    outline: none;
+    border: 0px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .15s ease-in-out;
+}
+
+[contenteditable="true"]{
+    padding-right: 6%;
+}
+
 [contenteditable="true"]:active,
 [contenteditable="true"]:focus{
     outline: none;
 }
+
 
 
 ::-moz-selection {
