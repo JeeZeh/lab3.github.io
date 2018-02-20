@@ -71,22 +71,22 @@ td{
     border: 2px solid lightskyblue;
     border-radius: 5px 5px;
     outline:none;
-
+    padding-left: 50%;
 }
 
 .btn{
-    display: flex;
-    margin: auto;
+    display: block;
+    margin: 3% auto auto;
     outline: none;
-    border: 0px solid;
-    border-radius: 15px 15px;
+    border: 0 solid;
+    border-radius: 8px 8px;
     background-color: #548fed;
     font-family: inherit;
     font-size: 1em;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 600;
-    padding: 12px;
+    padding: 10px;
     color: white;
     transition: .15s ease-in-out;
 }
