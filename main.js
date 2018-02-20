@@ -5,9 +5,11 @@ function calculateAvg(){
         var entries = 0;
         for (var j = 0, col; col = row.cells[j]; j++){
             console.log(col.innerText);
-            if(j > 1 && col.innerText !== "-%" && col.innerText !== "-" && col.className !== "table-final-grade"){
-                rowTotal = rowTotal + parseFloat(col.innerText.slice(0, -1));
-                entries = entries + 1;
+            if(j > 1 && col.innerText !== "- %" && col.innerText !== "-" && col.className !== "table-final-grade"){
+                if(col.innerText.length > 2){
+                    rowTotal = rowTotal + parseFloat(col.innerText.slice(0, -2));
+                    entries = entries + 1;
+                }
             }
             if(col.className === "table-final-grade"){
                 var mean = 0;
@@ -15,7 +17,7 @@ function calculateAvg(){
                     mean = Math.round(rowTotal/entries);
                 }
                 if(mean < 40){
-                    col.style.backgroundColor = "#990000";
+                    col.style.backgroundColor = "#de7d74";
                     col.style.color = "white";
                 }else{
                     col.style.backgroundColor = "#ffffff";

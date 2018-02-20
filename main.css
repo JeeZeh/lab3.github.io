@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-html {
+body {
     color: #222;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -12,26 +12,38 @@ table{
     margin: auto;
 }
 
+.table-rows0{
+    background-color: #fefefe;
+}
+
+.table-rows1{
+    background-color: #f9f9f9;
+}
+
 .table-headings{
     text-align: center;
 }
 
 .table-container{
-    border-spacing: 1em;
+    border-spacing: .5em;
 }
 
 .table-result{
     text-align: right;
 }
 
-[contenteditable="true"]{
+td{
+    border-radius: 5px 5px;
+    padding: 6px;
+}
+
+.entry{
     text-align: right;
     border: 1px solid lightsteelblue;
     border-radius: 5px 5px;
-    padding: 5px;
+    padding: 5%;
     transition: background-color .1s ease-in-out;
-    display: inline-block;
-    column-width: auto;
+    display: inline;
 }
 
 .table-final-grade{
@@ -40,17 +52,26 @@ table{
     padding: 5px;
 }
 
-[contenteditable="true"]:hover{
-    background-color: #f9f9f9;
+.col1{
+    width: 30%;
+}
+
+.col3, .col4, .col5, .col6, .col7, .col8{
+    width: 10%;
+    padding: 5px;
+}
+
+.entry:hover{
+    background-color: #f2f2f2;
     transition: background-color .1s ease-in-out;
 }
 
-[contenteditable="true"]:active,
-[contenteditable="true"]:focus{
+.entry:active,
+.entry:focus{
     border: 2px solid lightskyblue;
     border-radius: 5px 5px;
     outline:none;
-    padding: 4px;
+
 }
 
 .btn{
@@ -78,16 +99,14 @@ table{
     transition: .15s ease-in-out;
 }
 
-[contenteditable="true"]{
+.entry{
     padding-right: 6%;
 }
 
-[contenteditable="true"]:active,
-[contenteditable="true"]:focus{
+.entry:active,
+.entry:focus{
     outline: none;
 }
-
-
 
 
 ::-moz-selection {
