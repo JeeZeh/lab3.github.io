@@ -13,7 +13,6 @@ function calculateAvg() {
                             col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">100</span><span class=\"percent\"></span>%";
                         if(parseInt(col.innerText) < 0)
                             col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">0</span><span class=\"percent\"></span>%";
-
                         rowTotal = rowTotal + parseFloat(col.innerText.slice(0, -1));
                         entries += 1;
                     }
