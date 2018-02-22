@@ -10,10 +10,9 @@
         <link rel="stylesheet" href="main.css">
         <script src="main.js"></script>
 
-
     </head>
     <body>
-        <table class="table-container" id="table-results" oninput="calculateAvg()">
+        <table class="table-container" id="table-results" onkeyup="calculateAvg()">
             <tr class="table-headings">
                 <th class="col1">Name</th>
                 <th class="col2">ID</th>
@@ -27,106 +26,117 @@
             <tr class="table-rows0">
                 <td>Ramon Kirton</td>
                 <td>45681379</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows1">
                 <td>Audrie Whitesell</td>
                 <td>23419721</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows0">
                 <td>Grzegorz Brzęczyszczykiewicz</td>
                 <td>65477351</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows1">
                 <td>Alycia Cromartie</td>
                 <td>31649824</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows0">
                 <td>Lance Ward</td>
                 <td>12378961</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows1">
                 <td>Mitzi Wahl</td>
                 <td>12342782</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows0">
                 <td>Deangelo Lamborn</td>
                 <td>99842373</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows1">
                 <td>Luanne Revilla</td>
                 <td>37655471</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows0">
                 <td>Bradford Latimore</td>
                 <td>16436874</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
             <tr class="table-rows1">
                 <td>Juliana Middlebrooks</td>
                 <td>43729857</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
-                <td class="table-result" onclick="document.execCommand('selectAll',false,null)"><span class="entry" contenteditable="true" >-</span> %</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
+                <td class="table-result"><span class="entry" contenteditable="true" placeholder="-"></span><span class="percent"></span>%</td>
                 <td class="table-final-grade">-</td>
             </tr>
         </table>
 
-    <button class="btn" onclick="calculateAvg()">Calculate Final Grades</button>
+        <div id="bottom-bar">
+            <span id="submitted"><strong>Unsubmitted assignments: </strong> <span id="submitted-assignments">0</span>
+            <span><button class="btn" onclick="calculateAvg()">Calculate Final Grades</button></span></span>
+        </div>
+
+        <div id="csv-container">
+            <textarea placeholder="CSV Output Box" cols="85" rows="10" id="csv-box"></textarea>
+            <div id="button-container">
+                <button class="btn" onclick="fillCSV()">Generate CSV</button>
+            </div>
+        </div>
+
 
     </body>
 </html>

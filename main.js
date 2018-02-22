@@ -1,31 +1,82 @@
-function calculateAvg(){
+function calculateAvg() {
+    var reset = false;
     var table = document.getElementById("table-results");
-    for (var i = 1, row; row = table.rows[i]; i++){
+    var unsubmitted = 0;
+    for (var i = 1, row; row = table.rows[i]; i++) {
         var rowTotal = 0;
         var entries = 0;
-        for (var j = 0, col; col = row.cells[j]; j++){
-            console.log(col.innerText);
-            if(j > 1 && col.innerText !== "- %" && col.innerText !== "-" && col.className !== "table-final-grade"){
-                if(col.innerText.length > 2){
-                    rowTotal = rowTotal + parseFloat(col.innerText.slice(0, -2));
-                    entries = entries + 1;
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            if (j > 1 && col.innerText !== "%" && col.innerText !== ' %' && col.className === "table-result") {
+                if (col.innerText.length > 0) {
+                    if (!isNaN(parseInt(col.innerText)) && !hasLetters(col.innerText)) {
+                        if(parseInt(col.innerText) > 100)
+                            col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">100</span><span class=\"percent\"></span>%";
+                        if(parseInt(col.innerText) < 0)
+                            col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">0</span><span class=\"percent\"></span>%";
+
+                        rowTotal = rowTotal + parseFloat(col.innerText.slice(0, -1));
+                        entries += 1;
+                    }
+                    else{
+                        col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\"></span><span class=\"percent\"></span>%";
+                        unsubmitted += 1;
+                    }
                 }
             }
-            if(col.className === "table-final-grade"){
-                var mean = 0;
-                if(entries > 0){
-                    mean = Math.round(rowTotal/entries);
+            else if (col.className === "table-result" && (col.innerText === "%" || col.innerText === "" || col.innerText === " "))
+                unsubmitted += 1;
+            if ((col.innerText === "-%" || col.innerText === '%') && col.className === "table-result") {
+                col.style.backgroundColor = "#fffac1";
+            }
+            else if (col.className === "table-result") {
+                if (i % 2 === 0)
+                    col.style.backgroundColor = "#f9f9f9";
+                else {
+                    col.style.backgroundColor = "#fefefe";
                 }
-                if(mean < 40){
+            }
+
+            if (col.className === "table-final-grade") {
+                var mean = 0;
+                mean = Math.round(rowTotal / 5);
+                col.innerText = mean.toString() + "%";
+                if (mean < 40) {
                     col.style.backgroundColor = "#de7d74";
                     col.style.color = "white";
-                }else{
-                    col.style.backgroundColor = "#ffffff";
+                }
+                else {
+                    if (i % 2 === 0)
+                        col.style.backgroundColor = "#f9f9f9";
+                    else {
+                        col.style.backgroundColor = "#fefefe";
+                    }
                     col.style.color = "black";
                 }
-                col.innerText = mean.toString();
             }
         }
     }
+    document.getElementById("submitted-assignments").innerText = unsubmitted.toString();
+}
 
+function fillCSV() {
+    var output = "";
+    var table = document.getElementById("table-results");
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            if (col.innerText === "%")
+                output += "-";
+            else
+                output += col.innerText;
+
+            if (j !== row.cells.length - 1)
+                output += ",";
+        }
+        if (i !== table.rows.length - 1)
+            output += "\n";
+    }
+    document.getElementById("csv-box").value = output;
+}
+
+function hasLetters(str){
+    return str.match(/[a-z]/i);
 }
