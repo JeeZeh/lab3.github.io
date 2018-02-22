@@ -10,14 +10,14 @@ function calculateAvg() {
                 if (col.innerText.length > 0) {
                     if (!isNaN(parseInt(col.innerText)) && !hasLetters(col.innerText)) {
                         if(parseInt(col.innerText) > 100)
-                            col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">100</span><span class=\"percent\"></span>%";
+                            col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">100</span><span class=\"percent-padding\"></span>%";
                         if(parseInt(col.innerText) < 0)
-                            col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">0</span><span class=\"percent\"></span>%";
+                            col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\">0</span><span class=\"percent-padding\"></span>%";
                         rowTotal = rowTotal + parseFloat(col.innerText.slice(0, -1));
                         entries += 1;
                     }
                     else{
-                        col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\"></span><span class=\"percent\"></span>%";
+                        col.innerHTML = "<span class=\"entry\" contenteditable=\"true\" placeholder=\"-\"></span><span class=\"percent-padding\"></span>%";
                         unsubmitted += 1;
                     }
                 }
