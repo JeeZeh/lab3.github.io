@@ -70,7 +70,7 @@ td{
     border: 0 solid;
     border-radius: 8px 8px;
     background-color: #548fed;
-    font-family: inherit;
+    font-family: 'Roboto', sans-serif;
     font-size: 1em;
     cursor: pointer;
     text-transform: uppercase;
