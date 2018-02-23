@@ -25,7 +25,7 @@ function calculateAvg() {
             else if (col.className === "table-result" && (col.innerText === "%" || col.innerText === "" || col.innerText === " "))
                 unsubmitted += 1;
             if ((col.innerText === "-%" || col.innerText === '%') && col.className === "table-result") {
-                col.style.backgroundColor = "#fffac1";
+                col.style.backgroundColor = "#fff7c7";
             }
             else if (col.className === "table-result") {
                 if (i % 2 === 0)
@@ -40,7 +40,7 @@ function calculateAvg() {
                 mean = Math.round(rowTotal / 5);
                 col.innerText = mean.toString() + "%";
                 if (mean < 40) {
-                    col.style.backgroundColor = "#de7d74";
+                    col.style.backgroundColor = "#de8a82";
                     col.style.color = "white";
                 }
                 else {

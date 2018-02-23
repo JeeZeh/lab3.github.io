@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 body {
     color: #222;
@@ -9,7 +10,6 @@ body {
 }
 
 table{
-    padding: auto;
     margin: auto;
 }
 
@@ -30,6 +30,8 @@ td{
 
 .table-headings{
     text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.1em;
 }
 
 .percent-padding{
@@ -112,11 +114,38 @@ td{
 
 .entry:empty::before {
     content: attr(placeholder);
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(30, 30, 30, 0.5);
 }
 
+#top-bar{
+    background-color: #252525;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.1em;
+    height: 60px;
+    width: 110%;
+    margin-left: -5%;
+    margin-top: -1%;
+    color: #f4f4f4;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+#title-text{
+    padding-bottom: 10%;
+    text-align: center;
+}
+
+#author-text{
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: -15px;
+    font-size: small;
+}
+
+#btn-calc{
+    margin-top: 30px;
+}
 #bottom-bar{
-    margin: 2%  auto;
+    margin: 10px  auto;
     text-align: center;
 }
 
@@ -126,11 +155,13 @@ td{
 
 #csv-container{
     display: block;
-    margin: 50px auto;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
 }
 
 #csv-button {
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 #csv-box {
@@ -143,6 +174,6 @@ td{
     font-family: "Courier New", serif ;
     font-size: .7em;
     line-height: 1.5em;
-    background-color: #1f1f1f;
+    background-color: #252525;
     color: #f4f4f4;
 }
