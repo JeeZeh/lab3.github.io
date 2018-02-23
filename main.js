@@ -1,5 +1,4 @@
 function calculateAvg() {
-    var reset = false;
     var table = document.getElementById("table-results");
     var unsubmitted = 0;
     for (var i = 1, row; row = table.rows[i]; i++) {
