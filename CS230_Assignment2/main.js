@@ -102,7 +102,8 @@ function writeTable(dimensions, data) {
         for(var j = 0, col; col = row.cells[j]; j++){
             if(j < columns-1){
                 if(cellData[cell] !== "-")
-                    col.children[0].setAttribute('value', cellData[cell++]);
+                    col.children[0].setAttribute('value', cellData[cell]);
+                cell++;
             }
         }
     }
