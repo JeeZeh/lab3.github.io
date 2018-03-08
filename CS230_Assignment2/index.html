@@ -14,24 +14,27 @@
         <tr id="table-header-row">
             <th id="student-header">Student Name</th>
             <th id="id-header">ID</th>
-            <th class="assignment-header">Assignment 1</th>
+            <th class="assignment-header" onclick="toggleColumn(this);">Assignment 1</th>
             <th id="final-header">Final Grade</th>
         </tr>
         <tr class="table-content-row" id="row-template">
-            <td><input class="table-input name" type="text" placeholder="-" onblur="saveState();"></td>
-            <td><input class="table-input id" type="text" placeholder="-" onblur="saveState();"></td>
-            <td><input class="table-input assignment" type="number" placeholder="-" onblur="calculateAvg(); saveState();"></td>
+            <td><input class="table-input name" type="text" placeholder="-" onclick="toggleRow(this.parentElement.parentElement);"></td>
+            <td><input class="table-input id" type="text" placeholder="-"></td>
+            <td><input class="table-input assignment" type="number" placeholder="-" onblur="calculateAvg();"></td>
             <td class="grade">-</td>
         </tr>
     </table>
 </div>
-<button class="btn" id="btn-add-row" onclick="addRow(); saveState();">Add Row</button>
-<button class="btn" id="btn-add-assignment" onclick="addColumn(); saveState();">Add Assignment</button>
+<button class="btn" id="btn-add-row" onclick="addRow();">Add Row</button>
+<button class="btn" id="btn-add-assignment" onclick="addColumn();">Add Assignment</button>
 <button class="btn" id="btn-avg" onclick="calculateAvg();">Calculate Average</button>
 <button class="btn" id="btn-save" onclick="readTable();">Save Table</button>
-<button class="btn" id="btn-load" onclick="writeTable(getCookie('tableDimensions') ,getCookie('tableData')); saveState();">Load Table</button>
-<button class="btn" id="btn-undo" onclick="undo();">Undo</button>
+<button class="btn" id="btn-load" onclick="writeTable(getCookie('tableDimensions') ,getCookie('tableData'));">Load Table</button>
+<button class="btn" id="btn-undo" onclick="undo();" disabled>Undo</button>
+<button class="btn" id="btn-del-row" onclick="deleteRow();" disabled>Delete Row</button>
+<button class="btn" id="btn-del-col" onclick="deleteColumn();" disabled>Delete Column</button>
 <script>calculateAvg();</script>
+<script>saveState();</script>
 
 </body>
 </html>
