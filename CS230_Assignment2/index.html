@@ -12,19 +12,20 @@
 <div id="table-container">
     <table id="table-results">
         <tr id="table-header-row">
-            <th id="student-header">Student Name</th>
+            <th id="name-header">Student Name</th>
             <th id="id-header">ID</th>
             <th class="assignment-header" onclick="toggleColumn(this);">Assignment 1</th>
             <th id="final-header">Final Grade</th>
         </tr>
         <tr class="table-content-row" id="row-template">
-            <td><input class="table-input name" type="text" placeholder="-" onclick="toggleRow(this.parentElement.parentElement);"></td>
-            <td><input class="table-input id" type="text" placeholder="-"></td>
-            <td><input class="table-input assignment" type="number" placeholder="-" onblur="calculateAvg();"></td>
+            <td class="name-container"><input class="table-input name" type="text" placeholder="-" onclick="toggleRow(this.parentElement.parentElement);"></td>
+            <td class="id-container"><input class="table-input id" type="text" placeholder="-"></td>
+            <td class="assignment-container"><input class="table-input assignment" type="number" placeholder="-" onblur="calculateAvg();"></td>
             <td class="grade">-</td>
         </tr>
     </table>
 </div>
+
 <button class="btn" id="btn-add-row" onclick="addRow();">Add Row</button>
 <button class="btn" id="btn-add-assignment" onclick="addColumn();">Add Assignment</button>
 <button class="btn" id="btn-avg" onclick="calculateAvg();">Calculate Average</button>

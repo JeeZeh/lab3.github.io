@@ -3,39 +3,24 @@ var assignments;
 var dataHistory = [];
 var highlightedColumn = [];
 var highlighted = "";
-var selected = "red";
-var deSelected = "white";
+var selected = "#fdffd1";
+var deSelected = "#f9f9f9";
 
-function addRow(){
-    var table = document.getElementById("table-results");
-    var rows = table.rows.length;
-    var cols = table.rows[0].cells.length;
-    var row = table.insertRow(rows);
-    for(var i = 0; i < cols; i++){
-        var inserted = row.insertCell(i);
-        switch(i){
-            case 0: inserted.innerHTML = "<td><input class=\"table-input name\" type=\"text\" placeholder=\"-\" onclick=\"toggleRow(this.parentElement.parentElement);\"></td>"; break;
-            case 1: inserted.innerHTML = "<input class=\"table-input id\" type=\"text\" placeholder=\"-\" >"; break;
-            case (cols-1): inserted.outerHTML = "<td class=\"grade\">-</td>"; break;
-            default: inserted.innerHTML = "<input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\">";
-        }
-    }
-    calculateAvg();
-}
+/*------------Basic Table Functions--------------*/
 
 function generateTable(rows, columns){
     highlighted = "";
     document.getElementById("table-container").innerHTML = "<table id=\"table-results\">\n" +
         "        <tr id=\"table-header-row\">\n" +
-        "            <th id=\"student-header\">Student Name</th>\n" +
+        "            <th id=\"name-header\">Student Name</th>\n" +
         "            <th id=\"id-header\">ID</th>\n" +
         "            <th class=\"assignment-header\" onclick=\"toggleColumn(this);\">Assignment 1</th>\n" +
         "            <th id=\"final-header\">Final Grade</th>\n" +
         "        </tr>\n" +
         "        <tr class=\"table-content-row\" id=\"row-template\">\n" +
-        "            <td><input class=\"table-input name\" type=\"text\" placeholder=\"-\" onclick=\"toggleRow(this.parentElement.parentElement);\"></td>\n" +
-        "            <td><input class=\"table-input id\" type=\"text\" placeholder=\"-\" ></td>\n" +
-        "            <td><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>\n" +
+        "            <td class=\"name-container\"><input class=\"table-input name\" type=\"text\" placeholder=\"-\" onclick=\"toggleRow(this.parentElement.parentElement);\"></td>\n" +
+        "            <td class=\"id-container\"><input class=\"table-input id\" type=\"text\" placeholder=\"-\"></td>\n" +
+        "            <td class=\"assignment-container\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>\n" +
         "            <td class=\"grade\">-</td>\n" +
         "        </tr>\n" +
         "    </table>";
@@ -47,21 +32,6 @@ function generateTable(rows, columns){
         addColumn();
     }
     console.log(document.getElementById("table-results"));
-}
-
-function addColumn(){
-    var table = document.getElementById("table-results");
-    var cols = table.rows[0].cells.length;
-    for(var i = 0, row; row = table.rows[i]; i++){
-        var inserted = row.insertCell(cols-1);
-        if(i === 0) {
-            inserted.outerHTML = "<th class=\"assignment-header\" onclick=\"toggleColumn(this)\">" + "Assignment " + (cols - 2) + "</th>";
-        }
-        else{
-            inserted.innerHTML = "<td><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
-        }
-    }
-    calculateAvg();
 }
 
 function calculateAvg() {
@@ -94,26 +64,7 @@ function normalise(){
     }
 }
 
-function writeTable(dimensions, data) {
-    var rows = parseInt(dimensions.split("|")[0]);
-    var columns = parseInt(dimensions.split("|")[1]);
-    var cellData = data.split("|");
-    assignments = columns - 3;
-    console.log("This makes no sense: " + (rows-1));
-    generateTable((rows-1), (columns-4));
-    var table = document.getElementById("table-results");
-    var cell = 0;
-    for(var i = 1, row; row = table.rows[i]; i++){
-        for(var j = 0, col; col = row.cells[j]; j++){
-            if(j < columns-1){
-                if(cellData[cell] !== "-")
-                    col.children[0].setAttribute('value', cellData[cell]);
-                cell++;
-            }
-        }
-    }
-    calculateAvg();
-}
+/*------------Saving & Writing--------------*/
 
 function readTable(){
     highlighted = "";
@@ -141,6 +92,26 @@ function readTable(){
     console.log("Cookie Set: Dimensions = " + dimensions);
     setCookie("tableData", output, 1);
     console.log("Cookie Set: Data = " + output);
+}
+
+function writeTable(dimensions, data) {
+    var rows = parseInt(dimensions.split("|")[0]);
+    var columns = parseInt(dimensions.split("|")[1]);
+    var cellData = data.split("|");
+    assignments = columns - 3;
+    generateTable((rows-1), (columns-4));
+    var table = document.getElementById("table-results");
+    var cell = 0;
+    for(var i = 1, row; row = table.rows[i]; i++){
+        for(var j = 0, col; col = row.cells[j]; j++){
+            if(j < columns-1){
+                if(cellData[cell] !== "-")
+                    col.children[0].setAttribute('value', cellData[cell]);
+                cell++;
+            }
+        }
+    }
+    calculateAvg();
 }
 
 function saveState(){
@@ -174,6 +145,25 @@ function undo() {
     highlightedColumn = [];
 }
 
+/*------------Adding, Selecting & Deleting Columns/Rows--------------*/
+
+function addRow(){
+    var table = document.getElementById("table-results");
+    var rows = table.rows.length;
+    var cols = table.rows[0].cells.length;
+    var row = table.insertRow(rows);
+    for(var i = 0; i < cols; i++){
+        var inserted = row.insertCell(i);
+        switch(i){
+            case 0: inserted.innerHTML = "<td class='name-container'><input class=\"table-input name\" type=\"text\" placeholder=\"-\" onclick=\"toggleRow(this.parentElement.parentElement);\"></td>"; break;
+            case 1: inserted.innerHTML = "<input class=\"table-input id\" type=\"text\" placeholder=\"-\" >"; break;
+            case (cols-1): inserted.outerHTML = "<td class=\"grade\">-</td>"; break;
+            default: inserted.outerHTML = "<td class='assignment-container'><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
+        }
+    }
+    calculateAvg();
+}
+
 function toggleRow(row){
     if(highlighted === "") {
         highlighted = row;
@@ -196,6 +186,32 @@ function toggleRow(row){
     }
 }
 
+function deleteRow(){
+    saveState();
+    if(highlighted !== null || highlighted !== ""){
+        highlighted.parentElement.removeChild(highlighted);
+    }
+    saveState();
+    document.getElementById("btn-undo").disabled = false;
+    document.getElementById("btn-del-row").disabled = true;
+    highlighted = ""
+}
+
+function addColumn(){
+    var table = document.getElementById("table-results");
+    var cols = table.rows[0].cells.length;
+    for(var i = 0, row; row = table.rows[i]; i++){
+        var inserted = row.insertCell(cols-1);
+        if(i === 0) {
+            inserted.outerHTML = "<th class=\"assignment-header\" onclick=\"toggleColumn(this)\">" + "Assignment " + (cols - 2) + "</th>";
+        }
+        else{
+            inserted.outerHTML = "<td class=\"assignment-container\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
+        }
+    }
+    calculateAvg();
+}
+
 function toggleColumn(cell){
     var table = document.getElementById("table-results");
     var index = parseInt(cell.innerText.split(" ")[1])+1;
@@ -204,7 +220,8 @@ function toggleColumn(cell){
         for (var i = 0, row; row = table.rows[i]; i++) {
             for (var j = 0, col; col = row.cells[j]; j++) {
                 if (j === index) {
-                    col.style.background = selected;
+                    if(i !== 0)
+                        col.style.background = selected;
                     highlightedColumn.push(col);
                     document.getElementById("btn-del-col").disabled = false;
                 }
@@ -215,7 +232,8 @@ function toggleColumn(cell){
         for (var i = 0, row; row = table.rows[i]; i++) {
             for (var j = 0, col; col = row.cells[j]; j++) {
                 if (j === index) {
-                    col.style.background = deSelected;
+                    if(i !== 0)
+                        col.style.background = deSelected;
                     highlightedColumn = [];
                     document.getElementById("btn-del-col").disabled = true;
                 }
@@ -240,18 +258,7 @@ function deleteColumn(){
     highlightedColumn = [];
 }
 
-function deleteRow(){
-    saveState();
-    if(highlighted !== null || highlighted !== ""){
-        highlighted.parentElement.removeChild(highlighted);
-    }
-    saveState();
-    document.getElementById("btn-undo").disabled = false;
-    document.getElementById("btn-del-row").disabled = true;
-    highlighted = ""
-}
-
-/*-------------------------*/
+/*------------Cookies-------------*/
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -262,6 +269,7 @@ function setCookie(name,value,days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
+
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -272,6 +280,7 @@ function getCookie(name) {
     }
     return null;
 }
+
 function eraseCookie(name) {
     document.cookie = name+'=; Max-Age=-99999999;';
 }
