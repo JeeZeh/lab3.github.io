@@ -6,14 +6,14 @@ body {
     color: #222;
     font-family: 'Able', sans-serif;
     font-size: 1em;
-    line-height: 1.4;
     background-color: #ededed;
 }
 
 table{
     margin: 25px auto auto;
     border-collapse: separate;
-    border-spacing: 0px 5px;
+    border-spacing: 0 5px;
+    font-family: "Roboto", sans-serif;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -25,10 +25,6 @@ input[type=number]::-webkit-outer-spin-button {
 td{
     background: #f9f9f9;
     padding: 4px 10px;
-}
-
-tr{
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 th{
@@ -57,11 +53,11 @@ th{
 
 .table-input:focus{
     border: 1px solid rgba(50, 50, 255, 0.3);
-    background: rgba(50, 50, 255, 0.05);
+    background: rgb(238, 242, 249);
 }
 
 .table-input:hover{
-    background: rgba(0,0,0,0.15);
+    background: rgb(230, 234, 229);
     transition: 0.08s;
 }
 
@@ -136,7 +132,7 @@ th{
 }
 
 .btn:disabled{
-    background: #dae5ff;
+    background: #dedee1;
 }
 
 .btn:active{
@@ -145,5 +141,11 @@ th{
 
 #table-header-row{
     box-shadow: none;
+}
 
+#btn-del-col:enabled{
+    background: #d73b38;
+}
+#btn-del-row:enabled{
+    background: #d73b38;
 }

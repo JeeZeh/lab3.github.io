@@ -3,7 +3,7 @@ var assignments;
 var dataHistory = [];
 var highlightedColumn = "";
 var highlighted = "";
-var selected = "rgb(253, 255, 209)";
+var selected = "rgb(255, 140, 135)";
 var deSelected = "rgb(249, 249, 249)";
 
 /*------------Basic Table Functions--------------*/
@@ -114,6 +114,9 @@ function writeTable(dimensions, data) {
             }
         }
     }
+    document.getElementById("btn-undo").disabled = true;
+    document.getElementById("btn-del-row").disabled = true;
+    document.getElementById("btn-del-col").disabled = true;
     calculateAvg();
 }
 
@@ -158,7 +161,7 @@ function addRow(){
     for(var i = 0; i < cols; i++){
         var inserted = row.insertCell(i);
         switch(i){
-            case 0: inserted.innerHTML = "<td class='name-container'><input class=\"table-input name\" type=\"text\" placeholder=\"-\" onclick=\"toggleRow(this.parentElement.parentElement);\"></td>"; break;
+            case 0: inserted.outerHTML = "<td class=\"name-container\"><input class=\"table-input name\" type=\"text\" placeholder=\"-\" onclick=\"toggleRow(this.parentElement.parentElement);\"></td>"; break;
             case 1: inserted.innerHTML = "<input class=\"table-input id\" type=\"text\" placeholder=\"-\" >"; break;
             case (cols-1): inserted.outerHTML = "<td class=\"grade\">-</td>"; break;
             default: inserted.outerHTML = "<td class='assignment-container'><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
@@ -211,7 +214,7 @@ function addColumn(){
         }
         else{
             if(row.cells[0].style.background === selected)
-                inserted.outerHTML = "<td class=\"assignment-container\" style=\"background: rgb(253, 255, 209);\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
+                inserted.outerHTML = "<td class=\"assignment-container\" style=\"background: rgb(255, 140, 135);\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
             else
                 inserted.outerHTML = "<td class=\"assignment-container\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
         }
