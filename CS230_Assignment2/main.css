@@ -13,7 +13,7 @@ body {
 table{
     margin: 25px auto auto;
     border-collapse: separate;
-    border-spacing: 10px 5px;
+    border-spacing: 0px 5px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -23,8 +23,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 td{
-    border-radius: 2px 2px;
-    padding: 4px;
+    background: #f9f9f9;
+    padding: 4px 10px;
+}
+
+tr{
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -34,15 +37,11 @@ th{
     font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 1px;
+    padding: 1px 15px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-td{
-    background: #f9f9f9;
 }
 
 .assignment-header:hover{
@@ -53,11 +52,17 @@ td{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 3px 3px;
     outline: none;
-    background: inherit;
+    background: #f9f9f9;
 }
 
 .table-input:focus{
-    border: 2px solid rgba(50, 50, 255, 0.3);
+    border: 1px solid rgba(50, 50, 255, 0.3);
+    background: rgba(50, 50, 255, 0.05);
+}
+
+.table-input:hover{
+    background: rgba(0,0,0,0.15);
+    transition: 0.08s;
 }
 
 .name{
@@ -85,6 +90,7 @@ td{
 
 .name-container{
     width: auto;
+    border-radius: 8px 0 0 8px;
 }
 
 .id-container{
@@ -98,4 +104,46 @@ td{
 
 .grade{
     width: auto;
+    border-radius: 0 8px 8px 0;
+}
+
+.btn{
+    background: #5286ff;
+    color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 3px 3px;
+    transition-timing-function: ease-in-out;
+    transition: 0.2s;
+    margin: 5px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover:enabled{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    transition-timing-function: ease-in-out;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:disabled{
+    background: #dae5ff;
+}
+
+.btn:active{
+    background: rgb(121, 172, 255);
+}
+
+#table-header-row{
+    box-shadow: none;
+
 }

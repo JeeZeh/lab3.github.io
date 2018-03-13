@@ -1,10 +1,10 @@
 var dimensionsHistory = [];
 var assignments;
 var dataHistory = [];
-var highlightedColumn = [];
+var highlightedColumn = "";
 var highlighted = "";
-var selected = "#fdffd1";
-var deSelected = "#f9f9f9";
+var selected = "rgb(253, 255, 209)";
+var deSelected = "rgb(249, 249, 249)";
 
 /*------------Basic Table Functions--------------*/
 
@@ -61,6 +61,9 @@ function normalise(){
                 col.children[0].value = 0;
             }
         }
+    }
+    for(var i = 2; i < table.rows[0].cells.length - 1; i++){
+        table.rows[0].cells[i].innerText = "Assignment " + (i-1);
     }
 }
 
@@ -142,7 +145,7 @@ function undo() {
     writeTable(dimensionsHistory[dimensionsHistory.length-2],dataHistory[dataHistory.length-2]);
     document.getElementById("btn-undo").disabled = true;
     highlighted = "";
-    highlightedColumn = [];
+    highlightedColumn = "";
 }
 
 /*------------Adding, Selecting & Deleting Columns/Rows--------------*/
@@ -178,7 +181,7 @@ function toggleRow(row){
             row.cells[i].style.background = deSelected;
         }
 
-        document.getElementById("btn-del-row").disabled = false;
+        document.getElementById("btn-del-row").disabled = true;
     }
     else{
         toggleRow(highlighted);
@@ -194,7 +197,8 @@ function deleteRow(){
     saveState();
     document.getElementById("btn-undo").disabled = false;
     document.getElementById("btn-del-row").disabled = true;
-    highlighted = ""
+    highlighted = "";
+    calculateAvg();
 }
 
 function addColumn(){
@@ -206,56 +210,49 @@ function addColumn(){
             inserted.outerHTML = "<th class=\"assignment-header\" onclick=\"toggleColumn(this)\">" + "Assignment " + (cols - 2) + "</th>";
         }
         else{
-            inserted.outerHTML = "<td class=\"assignment-container\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
+            if(row.cells[0].style.background === selected)
+                inserted.outerHTML = "<td class=\"assignment-container\" style=\"background: rgb(253, 255, 209);\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
+            else
+                inserted.outerHTML = "<td class=\"assignment-container\"><input class=\"table-input assignment\" type=\"number\" placeholder=\"-\" onblur=\"calculateAvg();\"></td>";
         }
     }
     calculateAvg();
 }
 
 function toggleColumn(cell){
-    var table = document.getElementById("table-results");
     var index = parseInt(cell.innerText.split(" ")[1])+1;
     console.log(index);
-    if(highlightedColumn.length === 0) {
-        for (var i = 0, row; row = table.rows[i]; i++) {
-            for (var j = 0, col; col = row.cells[j]; j++) {
-                if (j === index) {
-                    if(i !== 0)
-                        col.style.background = selected;
-                    highlightedColumn.push(col);
-                    document.getElementById("btn-del-col").disabled = false;
-                }
-            }
-        }
+    if(highlightedColumn === "") {
+        cell.style.color = "#b80003";
+        document.getElementById("btn-del-col").disabled = false;
+         highlightedColumn = (cell);
     }
-    else if(cell.innerText === highlightedColumn[0].innerText){
-        for (var i = 0, row; row = table.rows[i]; i++) {
-            for (var j = 0, col; col = row.cells[j]; j++) {
-                if (j === index) {
-                    if(i !== 0)
-                        col.style.background = deSelected;
-                    highlightedColumn = [];
-                    document.getElementById("btn-del-col").disabled = true;
-                }
-            }
-        }
+    else if(cell === highlightedColumn){
+        cell.style.color = "black";
+        highlightedColumn = "";
+        document.getElementById("btn-del-col").disabled = true;
     }
     else{
-        toggleColumn(highlightedColumn[0]);
+        toggleColumn(highlightedColumn);
         toggleColumn(cell);
     }
 }
 
 function deleteColumn(){
+    var table = document.getElementById("table-results");
     saveState();
-    for(var i = 0; i < highlightedColumn.length; i++){
-        var cell = highlightedColumn[i]; 
-        cell.parentElement.removeChild(cell);
+    var index = parseInt(highlightedColumn.innerText.split(" ")[1]) + 1;
+    for(var i = 0, row; row = table.rows[i]; i++) {
+        for (var j = 0, cell; cell = row.cells[j]; j++){
+            if(j === index)
+                cell.parentElement.removeChild(cell);
+        }
     }
     saveState();
     document.getElementById("btn-undo").disabled = false;
     document.getElementById("btn-del-col").disabled = true;
-    highlightedColumn = [];
+    highlightedColumn = "";
+    calculateAvg();
 }
 
 /*------------Cookies-------------*/
