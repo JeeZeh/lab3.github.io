@@ -18,13 +18,13 @@ body{
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: repeat(3, 33.33vw);
-    grid-template-rows: 15vw 5vw auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15vw 5vw 100vh;
     justify-content: center;
     grid-template-areas:
-        "header header header"
-        "social social social"
-        "main main main";
+        "header"
+        "social"
+        "main";
 }
 
 #main-content{
