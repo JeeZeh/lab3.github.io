@@ -114,7 +114,7 @@ li:hover {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        font-size: 1.8vw;
+        font-size: 32pt;
         padding: 20px;
         width: 80%;
         max-width: 600px;
@@ -127,7 +127,11 @@ li:hover {
 }
 
 .small{
-    font-size: 1.6vw
+    font-size: 24pt;
+}
+
+.very-small{
+    font-size: 18pt;
 }
 
 .overlay{
@@ -176,6 +180,7 @@ li:hover {
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome and Opera */
 }
+
 
 
 @media only screen and (max-width: 768px){
