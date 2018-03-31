@@ -74,8 +74,10 @@ li:hover {
 .content {
     margin: auto auto;
     margin-top: 75px;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
 }
 
 .content > img {
@@ -83,15 +85,13 @@ li:hover {
     margin: auto auto;
     width: 100%;
     max-width: 850px;
-    -webkit-filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2));
-    filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2));
+
 }
 
 .content-header{
     margin-top: 75px;
     font-size: 28pt;
     font-weight: 100;
-    /* border-bottom: 2px solid black; */
     display: inline-block;
     font-style: italic;
     color: rgb(151, 151, 151);
@@ -104,6 +104,65 @@ li:hover {
 .regular{
     font-weight: 500;
 }
+
+
+.desc{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        font-size: 170%;
+        padding: 20px;
+        width: 400px;
+        max-width: 600px;
+        word-wrap: break-word;
+        text-align: center;
+        line-height: 1.6em;
+        color: whitesmoke;
+        text-shadow: 0 2px 3px black;
+        font-weight: 100;   
+}
+
+.overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100%;
+}
+
+.content:hover .desc, .content:hover .overlay{
+    opacity: 100;
+    transition: .1s ease-in;
+}
+
+.content:hover img{
+    -webkit-filter: blur(5px) drop-shadow(0 20px 12px rgba(0,0,0, 0.2)) !important;
+    filter: blur(5px) drop-shadow(0 20px 12px rgba(0,0,0, 0.2)) !important;
+    transition: filter .2s ease-in;
+    transition: -webkit-filter .2s ease-in;
+    
+}
+
+.content img{
+    -webkit-filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2)) blur(0);
+    filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2)) blur(0);
+    transition: filter .2s ease;
+    transition: -webkit-filter .2s ease;
+}
+
+
+.content .desc, .content .overlay{
+    opacity: 0;
+    transition: .1s ease;
+}
+
+
 
 @media only screen and (max-width: 768px){
     
