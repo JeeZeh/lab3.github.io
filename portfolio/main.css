@@ -72,12 +72,13 @@ li:hover {
 
 
 .content {
+    justify-self: center;
     margin: auto auto;
     margin-top: 75px;
-    margin-left: 10%;
-    margin-right: 10%;
     position: relative;
     text-align: center;
+    max-width: 850px;
+    width: 80%;
 }
 
 .content > img {
@@ -112,9 +113,9 @@ li:hover {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        font-size: 170%;
+        font-size: 1.8vw;
         padding: 20px;
-        width: 400px;
+        width: 80%;
         max-width: 600px;
         word-wrap: break-word;
         text-align: center;
@@ -124,14 +125,19 @@ li:hover {
         font-weight: 100;   
 }
 
+.small{
+    font-size: 1.6vw
+}
+
 .overlay{
+    margin: 0 0;
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     background-color: rgba(0, 0, 0, 0.75);
     height: 100%;
 }
@@ -142,20 +148,18 @@ li:hover {
 }
 
 .content:hover img{
-    -webkit-filter: blur(5px) drop-shadow(0 20px 12px rgba(0,0,0, 0.2)) !important;
-    filter: blur(5px) drop-shadow(0 20px 12px rgba(0,0,0, 0.2)) !important;
-    transition: filter .2s ease-in;
-    transition: -webkit-filter .2s ease-in;
+    filter: drop-shadow(0 20px 12px rgba(0,0,0, 0.2)) blur(2px) ;
+    transition: filter .1s ease-in;
+    transition: -webkit-filter .1s ease-in;
     
 }
 
 .content img{
-    -webkit-filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2)) blur(0);
-    filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2)) blur(0);
-    transition: filter .2s ease;
-    transition: -webkit-filter .2s ease;
+    -webkit-filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2));
+    filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2));
+    transition: filter .1s ease;
+    transition: -webkit-filter .1s ease;
 }
-
 
 .content .desc, .content .overlay{
     opacity: 0;
@@ -178,6 +182,7 @@ li:hover {
     .header{
         grid-area: header;
         font-size: 32pt;
+        
     }
     aside {
         padding-top: 0;
@@ -194,6 +199,18 @@ li:hover {
         line-height: var(--bar-height);
         height: var(--bar-height);
 
+    }
+
+    .desc{
+        font-size: 140%;
+    }
+
+    .small{
+        font-size: 120%;
+    }
+
+    .very-small{
+        font-size: 85%;
     }
 
 
