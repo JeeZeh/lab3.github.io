@@ -177,6 +177,7 @@ li:hover {
         "main";
         grid-template-columns: 1fr;
         grid-template-rows: 300px auto 1fr;
+        width: 100vw;
     }
 
     .header{
