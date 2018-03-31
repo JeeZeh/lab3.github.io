@@ -75,6 +75,7 @@ li:hover {
     justify-self: center;
     margin: auto auto;
     margin-top: 75px;
+    margin-bottom: 150px;
     position: relative;
     text-align: center;
     max-width: 850px;
@@ -155,8 +156,8 @@ li:hover {
 }
 
 .content img{
-    -webkit-filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2));
-    filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.2));
+    -webkit-filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.3));
+    filter: drop-shadow(0 20px 20px rgba(0,0,0, 0.3));
     transition: filter .1s ease;
     transition: -webkit-filter .1s ease;
 }
