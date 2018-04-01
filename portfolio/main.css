@@ -79,7 +79,7 @@ li {
 }
 
 #flickr{
-    background: linear-gradient(-45deg,#790ab9c2, #db29ffb9);
+    background: linear-gradient(-45deg,#4d0ab9c2, #db29ffb9);
 }
 
 #soundcloud{
@@ -87,11 +87,7 @@ li {
 }
 
 #github{
-    background: linear-gradient(-45deg,#494949, #616161);
-}
-
-.list-gradient:hover{
-    
+    background: linear-gradient(-45deg,#494949, #777777);
 }
 
 a:hover .list-gradient{
