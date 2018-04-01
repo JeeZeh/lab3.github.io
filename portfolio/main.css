@@ -60,9 +60,43 @@ li {
     font-size: 18pt;
 }
 
-li:hover {
-    background-color: #5c5c5c;
+.list-gradient{
+    opacity: 0;
+    position: absolute;
+    height: 80px;
+    width: 300px;
+    display: block;
+    z-index: -1;
     transition: .05s ease-in-out;
+}
+
+#behance{
+    background: linear-gradient(-45deg,#0a47b9b2, #2974ffc4);
+}
+
+#youtube{
+    background: linear-gradient(-45deg,#b90a0abb, #ff2929c5);
+}
+
+#flickr{
+    background: linear-gradient(-45deg,#790ab9c2, #db29ffb9);
+}
+
+#soundcloud{
+    background: linear-gradient(-45deg,#ff8800be, #fcc206cb);
+}
+
+#github{
+    background: linear-gradient(-45deg,#494949, #616161);
+}
+
+.list-gradient:hover{
+    
+}
+
+a:hover .list-gradient{
+    transition: .05s ease-in-out;
+    opacity: 100;
 }
 
 #main {
