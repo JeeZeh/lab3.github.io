@@ -150,6 +150,7 @@ a:hover .list-gradient{
     font-weight: 100;
     transition: .1s all ease-in-out;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .can-click{
