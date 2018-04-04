@@ -18,7 +18,5 @@ function toggle(elementID){
             document.getElementById("showcase").classList.toggle("can-click");
         }
     }
-
-        
-       
+   
 }
