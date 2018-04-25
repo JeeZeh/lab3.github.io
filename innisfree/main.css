@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Scope+One');
+
+*{
+    font-family: 'Scope One', serif;
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+}
+
+html, body{
+    height: 100%;
+    background-color: black;
+}
+
+#container{
+    margin: auto auto;
+    display: flex;
+    position: relative;
+    margin-top: 3vh;
+    width: 80vw;
+    height: 45vw;
+    max-width: 1600px;
+    max-height: 900px;
+}
+
+#bg{ 
+    position: absolute;
+    margin: auto auto;
+    filter: brightness(1.1);
+}
+
+#hut{
+    width: 34%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 2%;
+    left: 47%;
+
+}
+
+#bees{
+    width: 20%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 37%;
+    left: 80%;
+
+}
+
+#linnets{
+    width: 15%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 25%;
+}
+
+#dew{
+    width: 35%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 52%;
+    left: 14%;
+    filter: brightness(1.3);
+}
+
+#beanrows{
+    width: 15%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 26%;
+    left: 0%;
+    filter: brightness(1.3);
+}
+
+#sun{
+    width: 25%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+}
+
+#dimmer{
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    position: fixed;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6); 
+    text-align: center;
+    font-weight: bold;
+    color: whitesmoke;
+    line-height: 4vw;
+}
+
+
+.qr{
+    width: 100%;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.clickable:hover{
+    filter: blur(1px) brightness(1.6);
+    cursor: pointer;
+}
+
+.fixed-width{
+    width: 100%;
+}
+
+
+#blocker{
+    z-index: 1000;
+    background-color: black;
+    height: 100%;
+    width:100%;
+    margin: 0; 
+    position: absolute;
+    top: 0;
+}
+
+.centered-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+#start-button{
+    color: white;
+    font-size: 5em;
+    text-align: center;
+}
+
+#popup{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "lines qr";
+    margin: auto auto;
+    align-self: center;
+    z-index: 10;
+    position: absolute;
+    background-color: rgba(27, 27, 27, 0.9);
+    left: 0;
+    right: 0;
+    width: 70%;
+    height: 65%;
+    font-size: 1vw;
+    color: white;
+    border-radius: 10px 10px;
+}
+
+#popup-line, #popup-desc{
+    margin: auto auto;
+    width: 80%;
+}
+
+#popup-desc{
+    font-style: italic;
+}
+
+
+#line-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    grid-area: lines;
+    height: 100%;
+}
+
+#popup-qr{
+    height: 50%;
+    width: 90%;
+    cursor: pointer;
+}
+
+#popup-qr-title{
+    margin-bottom: 5%;
+    width: 90%;
+    text-align: center;
+}
+
+#popup-qr-text{
+    margin-top: 5%;
+    width: 90%;
+    text-align: center;
+}
+
+#qr-container{
+    grid-area: qr;
+    align-self: center;
+}
