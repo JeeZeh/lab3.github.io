@@ -6,11 +6,11 @@ var lines =
 /*9*/"I will arise and go now, for always night and day<br>I hear lake water lapping with low sounds by the shore"];
 
 var descriptions = 
-["gjhkgjhkgjhksfgdfgfg dfg dg fdg f gdfg df",
-"dfg g dfdfg  gfdfg fdg dgfgfdzdfa ad a g",
-"a gfgd adfgadfgafdgadfg ",
-"afdg fgad dfg  fgdfgdfgd ",
-"a fgdfgdg fdafgd afg fgd fgdfgad"];
+["Nature and simplicity are evident in these 2 lines.<br>The word ‘small’ suggest he wants to live alone in peace.",
+"The 4th line completes an ABAB rhyme scheme.",
+"Metaphorical relationship between the notion of peace and nature.<br>The motion symbolises time standing still",
+"Notion of a daydream enhanced by imagery. Purple, hazy, birds...",
+"Yeats is so absorbed in his dream he can hear water that isn’t there. This demonstrates his love for the island."];
 
 var codes = 
 ["Home",
@@ -84,7 +84,7 @@ $(document).ready(function() {
         popup(4);
     });
 
-    $("#sun").click(() =>{
+    $("#water").click(() =>{
         popup(5);
     });
 
