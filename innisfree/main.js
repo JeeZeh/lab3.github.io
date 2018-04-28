@@ -85,7 +85,7 @@ $(document).ready(function () {
                 $('#heart').delay(2000).fadeIn(4000);
 
                 setTimeout(() => {
-                    $('#heart').addClass("pulsate clickable");
+                    $('#heart').addClass("pulsate");
                     wait = false;
                 }, 5000);
             }
@@ -98,7 +98,7 @@ $(document).ready(function () {
     $("#heart").click(() => {
         if (!wait && !playing) {
             $('#pavements').fadeOut(6000);
-            $('#heart').fadeOut(6000);
+            $('#heart').fadeOut(2500);
             $('#guide').fadeOut(6000);
             playAudio("entry");
         }
