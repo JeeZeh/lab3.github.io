@@ -5,11 +5,7 @@
     font-size: 1.1em;
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
     color: inherit;
 }
 
@@ -18,10 +14,7 @@ html, body{
     background-color: black;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
 #container{
     margin: auto auto;
     display: flex;
@@ -33,7 +26,6 @@ html, body{
     max-height: 900px;
 }
 
-<<<<<<< HEAD
 #intro{
     z-index: 15;
     background-color: black;
@@ -97,8 +89,6 @@ html, body{
     color: white;
 }
 
-=======
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
 #bg{ 
     position: absolute;
     margin: auto auto;
@@ -106,21 +96,12 @@ html, body{
 }
 
 #hut{
-<<<<<<< HEAD
     width: 31.5%;
-=======
-    width: 34%;
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
     display: inline-block;
     position: absolute;
     z-index: 1;
     top: 1%;
-<<<<<<< HEAD
     left: 48.2%;
-=======
-    left: 47%;
-
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
 }
 
 #bees{
@@ -147,11 +128,7 @@ html, body{
     display: inline-block;
     position: absolute;
     z-index: 1;
-<<<<<<< HEAD
     top: 50%;
-=======
-    top: 52%;
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
     left: 14%;
     filter: brightness(1.3);
 }
@@ -161,15 +138,9 @@ html, body{
     display: inline-block;
     position: absolute;
     z-index: 1;
-<<<<<<< HEAD
     top: 40%;
     left: 0%;
     filter: brightness(1.3) opacity(0.5);
-=======
-    top: 26%;
-    left: 0%;
-    filter: brightness(1.3);
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
 }
 
 #sun{
@@ -188,7 +159,6 @@ html, body{
     z-index: 1;
     top: 81.1%;
     left: 0%;
-<<<<<<< HEAD
     filter: brightness(1.2);
 }
 
@@ -199,23 +169,15 @@ html, body{
     z-index: 2;
     top: 83.5%;
     left: 0%;
-    filter: brightness(1.5);
+    filter: brightness(1.65);
 }
 
 
-=======
-}
-
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
 #dimmer{
     width: 100vw;
     height: 100vh;
     z-index: 9;
-<<<<<<< HEAD
     position: absolute;
-=======
-    position: fixed;
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
     font-size: 1em;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.6); 
@@ -261,15 +223,7 @@ html, body{
     height: 100%;
 }
 
-<<<<<<< HEAD
 
-=======
-#start-button{
-    color: white;
-    font-size: 5em;
-    text-align: center;
-}
->>>>>>> 8167cc53a0d2b1d21700efa58a61cc71524df6a4
 
 #popup{
     display: grid;
