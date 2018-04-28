@@ -75,19 +75,20 @@ function closePopup() {
 
 $(document).ready(function () {
     $("#start-button").click(() => {
-        $("#start-button")
+        $("#start-button").css("cursor", "context-menu");
         $('#heart').fadeOut(16);
         $('#intro').fadeOut(6000);
         playAudio("pavements");
         setTimeout(() => {
-            playing = false;
-            playAudio("heart");
-            $('#heart').delay(2000).fadeIn(4000);
+            if(!playing){
+                playAudio("heart");
+                $('#heart').delay(2000).fadeIn(4000);
 
-            setTimeout(() => {
-                $('#heart').addClass("pulsate clickable");
-                wait = false;
-            }, 5000);
+                setTimeout(() => {
+                    $('#heart').addClass("pulsate clickable");
+                    wait = false;
+                }, 5000);
+            }
 
 
 
