@@ -92,7 +92,7 @@ $(document).ready(function () {
 
 
 
-        }, 6000);
+        }, 6500);
     });
 
     $("#heart").click(() => {
