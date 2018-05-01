@@ -2,7 +2,7 @@
 
 *{
     font-family: 'Scope One', serif;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 0;
     padding: 0;
     
@@ -31,7 +31,7 @@ html, body{
     background-color: black;
     color: whitesmoke;
     width: 100%;
-    line-height: 3em;
+    line-height: 2em;
     text-align: center
 }
 
@@ -40,9 +40,9 @@ html, body{
     width: 50%;
     margin:auto auto;
     color: rgb(201, 201, 201);
-    font-size: 5em;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    font-size: 6em;
+    margin-top: 12%;
+    margin-bottom: 8%;
     cursor: pointer;
 }
 
@@ -51,8 +51,8 @@ html, body{
 }
 
 #credits{
-    font-size: 0.8em;
-    line-height: 2em;
+    font-size: 1em;
+    line-height: 1.6em;
 }
 
 #pavements{ 
@@ -69,11 +69,12 @@ html, body{
     z-index: 11;
     top: 42%;
     left: 43%;
-    cursor: pointer;    
+    cursor: context-menu;    
 }
 
 .pulsate{
     animation: pulse 2s ease-out infinite ;
+    cursor: pointer !important;
 }
 
 @keyframes pulse { 
@@ -286,4 +287,17 @@ html, body{
 #qr-container{
     grid-area: qr;
     align-self: center;
+}
+
+#refresh{
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#refresh button{
+    padding: 5px;
+    border: 0;
+    border-radius: 2px 2px;
+    cursor: pointer;
 }

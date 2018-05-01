@@ -35,6 +35,16 @@ var sound;
 var playing = false;
 var wait = true;
 
+function ambiance() {
+    ambiance = new Audio('audio\\nature.mp3');
+    ambiance.addEventListener('ended', function () {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    ambiance.volume = 0.6;
+    ambiance.play();
+}
+
 
 function playAudio(file) {
     sound = new Audio("audio\\" + file + ".ogg");
@@ -76,23 +86,22 @@ function closePopup() {
 $(document).ready(function () {
     $("#start-button").click(() => {
         $("#start-button").css("cursor", "context-menu");
+        $("#start-button").off();
         $('#heart').fadeOut(16);
         $('#intro').fadeOut(6000);
-        playAudio("pavements");
+        $('#refresh').removeClass("hidden");
+        $('#refresh').fadeOut(1);
+        playAudio("intro");
         setTimeout(() => {
-            if(!playing){
-                playAudio("heart");
-                $('#heart').delay(2000).fadeIn(4000);
+            $('#refresh').fadeIn(2000);
 
-                setTimeout(() => {
-                    $('#heart').addClass("pulsate");
-                    wait = false;
-                }, 5000);
-            }
+            $('#heart').delay(2000).fadeIn(4000);
 
-
-
-        }, 6000);
+            setTimeout(() => {
+                $('#heart').addClass("pulsate");
+                wait = false;
+            }, 5750);
+        }, 5000);
     });
 
     $("#heart").click(() => {
@@ -101,6 +110,9 @@ $(document).ready(function () {
             $('#heart').fadeOut(2500);
             $('#guide').fadeOut(6000);
             playAudio("entry");
+            setTimeout(() => {
+                ambiance();
+            }, 1000);
         }
     });
 
