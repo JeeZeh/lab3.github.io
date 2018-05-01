@@ -86,7 +86,7 @@ $(document).ready(function () {
                 setTimeout(() => {
                     $('#heart').addClass("pulsate");
                     wait = false;
-                }, 5000);
+                }, 5750);
             }
         , 5000);
     });
