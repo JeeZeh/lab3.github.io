@@ -78,10 +78,9 @@ $(document).ready(function () {
         $("#start-button").css("cursor", "context-menu");
         $('#heart').fadeOut(16);
         $('#intro').fadeOut(6000);
-        playAudio("pavements");
+        playAudio("intro");
         setTimeout(() => {
-            if(!playing){
-                playAudio("heart");
+        
                 $('#heart').delay(2000).fadeIn(4000);
 
                 setTimeout(() => {
@@ -89,10 +88,7 @@ $(document).ready(function () {
                     wait = false;
                 }, 5000);
             }
-
-
-
-        }, 6500);
+        , 5000);
     });
 
     $("#heart").click(() => {
