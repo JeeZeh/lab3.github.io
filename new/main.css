@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,700,800|Noto+Sans:400,400i,700');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.topbar{
+    background: linear-gradient(90deg, rgba(100,79,233,1) 0%, rgba(110,61,187,1) 100%);
+    height: 10px;
+    width: 100%;
+}
+
+#content{
+    margin: auto auto;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "sidebar main";
+    width: 60vw;
+}
+
+#heading{
+    grid-area: header;
+    margin-top: 30px;
+    width: 1000px;
+}
+
+.title{
+    color: #222222;
+    font-family: 'Muli', sans-serif;
+    font-weight: bolder;
+    font-size: 80px;
+    margin-bottom: 20px;
+    z-index: 20;
+}
+
+.subtitle{
+    position: relative;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    margin-left: 40px;
+    margin-top: -35px;
+    animation: fadeIn .5s ease-in;
+}
+
+@keyframes gradfade {
+    from {right: 85%;}
+    to {right: 30%;}
+}
+
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to {opacity: 100;}
+}
+
+.subtitle:after {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    height: 100%;
+    width: 25%;
+    content: "";
+    right: 20%;
+    background: linear-gradient(to left,
+       rgba(255,255,255, 1) 30%, 
+       rgba(255,255,255, 0) 70%
+    );
+    pointer-events: none; /* so the text is still selectable */
+    animation-name: gradfade;
+    animation-duration: 7s;
+  }
+
+  
+
+.title::first-letter {
+    float: left;
+    font-size: 95px;
+    margin-top: 24px;
+    margin-right: 2px;
+    z-index: 1999;
+}
+
+.hide{
+    display: none;
+}
