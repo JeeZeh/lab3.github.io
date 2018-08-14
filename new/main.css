@@ -24,6 +24,7 @@
     grid-area: header;
     margin-top: 30px;
     width: 1000px;
+
 }
 
 .title{
@@ -33,10 +34,10 @@
     font-size: 80px;
     margin-bottom: 20px;
     z-index: 20;
+
 }
 
 .subtitle{
-    position: relative;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
     margin-left: 40px;
@@ -55,7 +56,6 @@
 }
 
 .subtitle:after {
-    position: absolute;
     z-index: 0;
     bottom: 0;
     height: 100%;
@@ -74,10 +74,9 @@
   
 
 .title::first-letter {
-    float: left;
+    position: absolute;
+    bottom
     font-size: 95px;
-    margin-top: 24px;
-    margin-right: 2px;
     z-index: 1999;
 }
 
