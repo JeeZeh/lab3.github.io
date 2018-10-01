@@ -64,10 +64,10 @@ nav{
     margin: auto auto;
     margin-top: 40px;
     animation: expand 2.2s ease-out;
-    border-color: rgb(180, 180, 180);
-    background-color: rgb(180, 180, 180);
-    color: rgb(180, 180, 180);
-    height: 1px;
+    border-color: rgb(207, 207, 207);
+    background-color: rgb(207, 207, 207);
+    color: rgb(207, 207, 207);
+    height: 3px;
     border: 0;
 }
 
