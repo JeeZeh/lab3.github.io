@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,700,800|Noto+Sans:400,400i,700|Heebo:100,300,400,500,700,800,900');
 
-*{
+* {
     margin: 0;
     padding: 0;
+    color: #222222;
 }
 
-.topbar{
-    background: linear-gradient(90deg, rgba(100,79,233,1) 0%, rgba(110,61,187,1) 100%);
+body {
+    background-color: rgb(250, 250, 250);
+}
+
+.topbar {
+    background: linear-gradient(90deg, rgba(100, 79, 233, 1) 0%, rgba(110, 61, 187, 1) 100%);
     height: 10px;
     width: 100%;
 }
 
-nav{
+nav {
     grid-area: nav;
     display: flex;
     flex-direction: row;
@@ -19,46 +24,46 @@ nav{
     margin-top: 60px;
 }
 
-.navitem{
+.navitem {
     margin-left: 10%;
     margin-right: 10%;
     font-family: Heebo, Helvetica, Arial, sans-serif;
     font-weight: 800;
     font-size: 28px;
     opacity: 0.3;
-    transition: linear 0.15s;
+    transition: linear 0.06s;
     cursor: pointer;
 }
 
-.navitem:hover{
+.navitem:hover {
     opacity: 1;
-    transition: ease-out 0.1s;
+    transition: cubic-bezier(.13, .91, .37, 1) 0.3s;
 }
 
-.selected{
-    opacity: 1;
+.selected {
+    opacity: 1;;
 }
 
 
-#content{
+#content {
     margin: auto auto;
     display: grid;
-    grid-template-areas: 
-    "header header header"
-    "nav nav nav"
-    "main main main";
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "main main main";
     width: 70vw;
     max-width: 1200px;
     animation: fadeIn 1s ease-in-out;
 }
 
-#heading{
+#heading {
     justify-self: center;
     grid-area: header;
     margin-top: 30px;
 }
 
-#heading-splitter{
+#heading-splitter {
     grid-area: main;
     width: 100%;
     margin: auto auto;
@@ -71,17 +76,50 @@ nav{
     border: 0;
 }
 
-.title{
+#ctn-about {
+    grid-area: main;
+    width: 65%;
+    margin: auto auto;
+    margin-top: 100px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+#about-intro {
+    font-weight: 600;
+    font-family: 'Heebo', sans-serif;
+    font-size: 24px;
+}
+
+#about {
+    font-family: 'Noto Sans', sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: center;
+}
+
+#interested {
+    margin-top: 40px;
+    font-style: italic;
+}
+
+#resume {
+    text-align: center;
+    margin: auto auto;
+    margin-top: 35px;
+}
+
+.title {
     color: #222222;
     font-family: 'Muli', sans-serif;
     font-weight: bolder;
     font-size: 100px;
     margin-bottom: 20px;
     z-index: 20;
-
 }
 
-.subtitle{
+.subtitle {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
     font-size: 18px;
@@ -91,19 +129,24 @@ nav{
     text-align: left;
 }
 
-@keyframes gradfade {
-    from {right: 85%;}
-    to {right: 30%;}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
 }
 
-@keyframes fadeIn{
-    from{opacity: 0;}
-    to {opacity: 100;}
-}
+@keyframes expand {
+    from {
+        width: 0%
+    }
 
-@keyframes expand{
-    from{width: 0%}
-    to{width: 100%;}
+    to {
+        width: 100%;
+    }
 }
 
 .subtitle:after {
@@ -113,15 +156,43 @@ nav{
     width: 25%;
     content: "";
     right: 20%;
-    background: linear-gradient(to left,
-       rgba(255,255,255, 1) 30%, 
-       rgba(255,255,255, 0) 70%
-    );
-    pointer-events: none; /* so the text is still selectable */
-    animation-name: gradfade;
-    animation-duration: 7s;
-  }
+    pointer-events: none;
+    /* so the text is still selectable */
+}
 
-.hide{
+.hide {
     display: none;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin: auto auto;
+    position: relative;
+}
+
+.tab {
+    padding-left: 4em;
+}
+
+.btn {
+    border-radius: 30px 30px;
+    font-family: 'Heebo';
+    font-weight: 600;
+    font-size: 16px;
+    border: solid 2px rgba(100, 79, 233, 1);
+    background-color: whitesmoke;
+    padding: 15px 35px 15px 35px;
+    cursor: pointer;
+    color: #222222;
+    transition: linear 0.08s;
+    outline: 0;
+}
+
+.btn:hover {
+    background-color: rgb(236, 236, 236);
+    border: solid 2px rgb(185, 141, 255);
+    color: #818181;
+    transition: cubic-bezier(.13, .91, .37, 1) 0.3s;
 }
