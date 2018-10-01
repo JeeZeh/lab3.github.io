@@ -1,20 +1,22 @@
-typeText = "Web Developer | Programmer | Graphics Artist | Musician";
+typeText = "Web Developer | Programmer | Graphics Designer | Musician";
 typeIterator = 0;
 
 window.onload = function(){
     this.setTimeout(() => {
         typeIt(this.document.getElementById("heading-sub"), 60);
-    }, 750)
+    }, 150)
 }
 
 function typeIt(element, speed){
-    if(element.classList.contains("hide"))
-        element.classList.remove("hide");
+    if(element.innerHTML === "&nbsp;"){
+        element.innerHTML = "";
+    }
     if(typeText === ""){
         typeText = element.innerHTML;
         element.innerHTML = "";
     }
     if(typeIterator < typeText.length){
+        
         element.innerHTML += typeText.charAt(typeIterator);
         typeIterator++;
         setTimeout(() => {
