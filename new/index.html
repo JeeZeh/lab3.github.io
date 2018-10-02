@@ -19,26 +19,65 @@
         </div>
 
         <nav>
-            <div id="btn-port" class="navitem">portfolio</div>
-            <div id="btn-about" class="navitem selected">about me</div>
-            <div id="btn-contact" class="navitem">contact</div>
+            <div id="btn-port" class="navitem" onclick="switchTabs(document.querySelector('#ctn-port'));">portfolio</div>
+            <div id="btn-about" class="navitem selected" onclick="switchTabs(document.querySelector('#ctn-about'));">about me</div>
+            <!-- <div id="btn-contact" class="navitem">contact</div> -->
         </nav>
 
-        <hr id="heading-splitter">
+        <hr class="splitter">
 
-        <div id="ctn-about" class="">
+        <div id="ctn-about" class="section active">
             <div id="about"><span id="about-intro" class="center">Hi, my name is Jesse!</span><br><br>
                 I'm a 3<sup>rd</sup> year Computer Science student at Maynooth University specialising in
                 Multimedia, Mobile & Web Development. I have a burning passion for tech, music, languages
                 and all things creative; you can see examples of these in my various portfolios.
                 I'm currently seeking a CS-based internship in Dublin as part of the third year of my degree.
                 <br>
-                <span id="interested" class="center">Grab a copy of my general-purpose resume/C.V. below</span>
+                <span id="interested" class="center">Grab a copy of my general-purpose résumé/C.V. below</span>
 
-                <a href="https://www.scribd.com/document/389868299/Jesse-Ashmore-General-Resume?secret_password=IrCgwSm6wggJcbnpuYT0" target="_blank"><button id="resume" class="btn">Download</button></a>
+                <a href="/misc/Jesse_Ashmore_General_Resume.pdf" download="Jesse Ashmore Résumé">
+                    <button id="resume" class="btn">Download</button>
+                </a>
 
             </div>
         </div>
+
+        <div id="ctn-port" class="section hide fade" >
+            <div id="cards">
+                <div id="card-git" class="card">
+                    <div class="icon github">github</div>
+                    <div class="desc">See my public repositories. These may include assignments, personal
+                        projects and coding challenges.
+                    </div>
+                </div>
+                <div id="card-bh" class="card">
+                    <div class="icon behance">behance</div>
+                    <div class="desc">See some of my personal design projects, ranging from branding to 
+                        graphics, and competitions to design challenges.
+                    </div>
+                </div>
+                <div id="card-sc" class="card">
+                    <div class="icon soundcloud">soundcloud</div>
+                    <div class="desc">Listen to some of the songs, some serious and some not so, that I've 
+                        published over the last few years as a personal hobby.
+                    </div>
+                </div>
+                <div id="card-yt" class="card">
+                    <div class="icon youtube">youtube</div>
+                    <div class="desc">My personal YouTube channel of many years with content like tutorials, 
+                        music curation, videogame editing and nonsensical memes.
+                    </div>
+                </div>
+                <div id="card-fl" class="card">
+                    <div class="icon flickr">flickr</div>
+                    <div class="desc">Explore some of the photos I've taken over the years as a hobbyist 
+                        photographer
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr id="hr-btm" class="splitter bottom">
     </div>
 
 
