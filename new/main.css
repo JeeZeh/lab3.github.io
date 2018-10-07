@@ -317,6 +317,12 @@ nav {
     text-align: center;
   }
 
+  #about {
+    max-width: 600px;
+    align-self: center;
+    margin: auto auto;
+  }
+
 
   .title {
     font-size: 60px;
