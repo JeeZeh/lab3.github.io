@@ -17,9 +17,11 @@ body {
 }
 
 .topbar {
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     rgba(100, 79, 233, 1) 0%,
-    rgba(110, 61, 187, 1) 100%);
+    rgba(110, 61, 187, 1) 100%
+  );
   height: 10px;
   width: 100%;
 }
@@ -323,7 +325,6 @@ nav {
     margin: auto auto;
   }
 
-
   .title {
     font-size: 60px;
     margin: 20px 20px;
@@ -382,7 +383,7 @@ nav {
     text-align-last: center;
   }
 
-  .desc>div {
+  .desc > div {
     max-width: 330px;
   }
 
@@ -394,7 +395,6 @@ nav {
     color: whitesmoke;
     letter-spacing: 2px;
     font-weight: 400;
-
   }
 
   .card {
@@ -412,12 +412,17 @@ nav {
   #cards::first-child {
     margin-top: 20px;
   }
-
 }
 
 @media only screen and (max-width: 440px) {
   .desc {
     font-size: 14px;
   }
-
 }
+
+/* 
+TODO:
+- Justify text on cards
+- Update cards on desktop
+- Fix subtitle on mobile
+ */
