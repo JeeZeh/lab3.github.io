@@ -62,7 +62,7 @@ nav {
     "nav nav nav"
     "main main main"
     "footer footer footer";
-  width: 70vw;
+  width: 100%;
   max-width: 1200px;
 }
 
@@ -74,7 +74,7 @@ nav {
 
 .splitter {
   grid-area: main;
-  width: 100%;
+  width: 70%;
   margin: auto auto;
   margin-top: 40px;
   /* animation: expand 1s ease-out; */
@@ -93,7 +93,7 @@ nav {
 .section {
   opacity: 1;
   grid-area: main;
-  width: 65%;
+  width: 100%;
   margin: auto auto;
   margin-top: 100px;
   font-size: 18px;
@@ -102,13 +102,28 @@ nav {
   transition: opacity 0.25s ease-in-out;
 }
 
+#ctn-about {
+  width: 70%;
+}
+
+#cards {
+  margin: auto auto;
+  display: flex;
+  width: 80%;
+  flex-flow: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .card {
-  max-width: 640px;
+  max-width: 400px;
   margin: auto;
   display: grid;
-  grid-template-areas: "icon desc";
-  grid-template-columns: 3fr 5fr;
-  height: 120px;
+  grid-template-areas:
+    "icon"
+    "desc";
+  grid-template-rows: 3fr 5fr;
+  height: 300px;
   filter: drop-shadow(0 3px 2px #00000046);
   margin-bottom: 60px;
 }
@@ -125,7 +140,7 @@ nav {
   letter-spacing: 2px;
   color: whitesmoke;
   border: 0;
-  border-radius: 8px 0 0 8px;
+  border-radius: 8px 8px 0 0;
   transition: color 0.1s ease-out;
 }
 
@@ -136,16 +151,21 @@ nav {
 .desc {
   display: flex;
   align-items: center;
+  flex-direction: column;
   grid-area: desc;
   background-color: rgb(240, 240, 240);
   border: 0;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 0 8px 8px;
   font-family: "Noto Sans", sans-serif;
   text-align: justify;
   text-justify: inter-word;
   line-height: 24px;
   font-size: 16px;
   padding: 0 30px;
+}
+
+.desc:first-child {
+  z-index: 0;
 }
 
 #about-intro {
@@ -287,7 +307,13 @@ nav {
 }
 
 .btn-portfolio {
-  display: none;
+  z-index: 10;
+  display: block;
+  grid-area: desc;
+  border: none;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 /* Responsive Rules */
@@ -384,17 +410,6 @@ nav {
 
   .desc>div {
     max-width: 330px;
-  }
-
-  .btn-portfolio {
-    margin-top: 20px;
-    display: block;
-    grid-area: desc;
-    border: none;
-    color: whitesmoke;
-    letter-spacing: 2px;
-    font-weight: 400;
-
   }
 
   .card {
