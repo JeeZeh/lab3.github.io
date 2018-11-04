@@ -54,6 +54,17 @@ nav {
   opacity: 1;
 }
 
+.selected::after {
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  opacity: 0.5;
+  font-weight: 300;
+  margin-bottom: -30px;
+  margin-top: -10px;
+  text-align: center;
+  content: "^";
+}
+
 #content {
   margin: auto auto;
   display: grid;
@@ -344,7 +355,7 @@ nav {
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
   #content {
     width: 100%;
   }
@@ -369,6 +380,10 @@ nav {
     font-size: 14px;
     width: 80%;
     margin-top: -20px;
+  }
+
+  .selected::after {
+    content: "";
   }
 
   .navitem {
@@ -403,7 +418,7 @@ nav {
   }
 
   .icon {
-    height: 80px;
+    height: 100px;
     border-radius: 8px 8px 0 0;
     font-size: 24px;
   }
@@ -414,7 +429,7 @@ nav {
     border-radius: 0 0 8px 8px;
     padding: 20px;
     flex-direction: column;
-    text-align-last: center;
+    /* text-align-last: center; */
   }
 
   .desc>div {
@@ -427,7 +442,7 @@ nav {
       "desc";
     grid-template-columns: none;
     width: 100%;
-    max-width: 500px;
+    max-width: 420px;
     margin-top: 10px;
     max-height: none;
     height: auto;

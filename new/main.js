@@ -1,13 +1,13 @@
-let typeText = "Web Developer | Programmer | Graphics Designer | Musician";
+let typeText = "Web Developer | Programmer | Graphics&nbsp;Designer | Musician";
 let typeIterator = 0;
 
-window.onload = function() {
+window.onload = function () {
   if (window.innerWidth > 1000) {
     this.setTimeout(() => {
       typeIt(this.document.getElementById("heading-sub"), 60);
     }, 150);
   } else {
-    this.document.getElementById("heading-sub").innerText = typeText;
+    this.document.getElementById("heading-sub").innerHTML = typeText;
   }
 };
 
