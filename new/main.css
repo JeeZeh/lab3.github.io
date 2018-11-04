@@ -392,6 +392,7 @@ nav {
   .title {
     font-size: 60px;
     margin: 20px 20px;
+    line-height: 65px;
   }
 
   .subtitle {
@@ -429,10 +430,6 @@ nav {
   .section {
     font-size: 14px;
     line-height: 28px;
-  }
-
-  #hr-btm {
-    display: none;
   }
 
   .desc {
