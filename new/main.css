@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  color: #222222;
 }
 
 a {
@@ -13,7 +12,7 @@ a {
 body {
   background-color: rgb(250, 250, 250);
   padding-bottom: 100px;
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .topbar {
@@ -83,12 +82,21 @@ nav {
   margin-top: 30px;
 }
 
+#dark-toggle {
+  text-align: centerl;
+  margin: auto auto;
+  grid-area: footer;
+  display: block;
+  margin-top: 100px;
+  transform: scale(0.8);
+  width: 175px;
+}
+
 .splitter {
   grid-area: main;
   width: 70%;
   margin: auto auto;
   margin-top: 40px;
-  /* animation: expand 1s ease-out; */
   border-color: rgb(207, 207, 207);
   background-color: rgb(207, 207, 207);
   color: rgb(207, 207, 207);
@@ -144,7 +152,7 @@ nav {
     "desc";
   height: 300px;
   filter: drop-shadow(0 3px 2px #00000046);
-  margin-bottom: 60px;
+  margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -155,7 +163,7 @@ nav {
   align-items: center;
   justify-content: center;
   font-family: "Heebo", sans-serif;
-  height: 100px;
+  height: 120px;
   font-weight: 700;
   font-size: 28px;
   letter-spacing: 2px;
@@ -179,6 +187,11 @@ nav {
   line-height: 24px;
   font-size: 16px;
   padding: 30px;
+}
+
+.dark-desc {
+  background-color: #333;
+  color: whitesmoke;
 }
 
 .desc:first-child {
@@ -210,8 +223,9 @@ nav {
 #resume {
   text-align: center;
   margin: auto auto;
+  font-weight: 500;
+  letter-spacing: 1.2px;
   margin-top: 35px;
-  border: solid 2px rgba(100, 79, 233, 1);
 }
 
 #hr-btm {
@@ -220,27 +234,27 @@ nav {
 
 .behance {
   background: linear-gradient(-45deg, #0a41a8b2, #2974ffc4);
-  border-color: #2974ffc4;
+  border-color: #2974ffc4 !important;
 }
 
 .youtube {
   background: linear-gradient(-45deg, #b90a0abb, #ff2929c5);
-  border-color: #ff2929c5;
+  border-color: #ff2929c5 !important;
 }
 
 .flickr {
   background: linear-gradient(-45deg, #4d0ab9c2, #db29ffb9);
-  border-color: #4d0ab9c2;
+  border-color: #4d0ab9c2 !important;
 }
 
 .soundcloud {
   background: linear-gradient(-45deg, #ff8800be, #fcc206cb);
-  border-color: #ff8800be;
+  border-color: #ff8800be !important;
 }
 
 .github {
   background: linear-gradient(-45deg, #575757, #7e7e7e);
-  border-color: #575757;
+  border-color: #575757 !important;
 }
 
 .title {
@@ -311,20 +325,24 @@ nav {
 .btn {
   border-radius: 30px 30px;
   border-style: solid;
+  border-color: #333;
   font-family: "Heebo";
   font-weight: 600;
   font-size: 16px;
-  background-color: whitesmoke;
   padding: 15px 35px 15px 35px;
   cursor: pointer;
+  background: none;
   color: #222222;
   transition: linear 0.08s;
   outline: 0;
 }
 
+.dark-btn {
+  color: whitesmoke;
+}
+
 .btn:hover {
-  background-color: rgb(236, 236, 236);
-  color: #818181;
+  opacity: 0.5;
   transition: cubic-bezier(0.13, 0.91, 0.37, 1) 0.3s;
 }
 
@@ -338,8 +356,8 @@ nav {
   grid-area: desc;
   background: none;
   border-width: 2px;
-  letter-spacing: 2px;
-  font-weight: 400;
+  letter-spacing: 1.5px;
+  font-weight: 500;
 }
 
 /* Responsive Rules */
@@ -379,7 +397,6 @@ nav {
     font-size: 18px;
     border: 2px solid rgb(207, 207, 207);
     border-radius: 30px 30px;
-    background-color: whitesmoke;
     padding: 10px 20px 10px 20px;
     margin-left: 8%;
     margin-right: 8%;
@@ -404,12 +421,6 @@ nav {
 
   #hr-btm {
     display: none;
-  }
-
-  .icon {
-    height: 100px;
-    border-radius: 8px 8px 0 0;
-    font-size: 24px;
   }
 
   .desc {
@@ -446,6 +457,19 @@ nav {
   .desc {
     font-size: 14px;
   }
+}
+
+
+.dark-bg {
+  background-color: #222;
+}
+
+.dark-text {
+  color: whitesmoke;
+}
+
+.dark-hr {
+  background-color: #555;
 }
 
 /* 

@@ -1,7 +1,15 @@
 let typeText = "Web Developer | Programmer | Graphics\xa0Designer | Musician";
 let typeIterator = 0;
 
+
+
 window.onload = function () {
+  let date = new Date();
+  let time = date.getHours();
+
+  if (time >= 20 || time <= 8)
+    toggleDark();
+  document.body.classList.toggle("hide");
   if (window.innerWidth > 1000) {
     this.setTimeout(() => {
       typeIt(this.document.getElementById("heading-sub"), 60);
@@ -53,4 +61,26 @@ function switchTabs(target) {
       }, 50);
     }, 200);
   }
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark-bg");
+  document.querySelector("#content").classList.toggle("dark-text");
+
+  for (const e of document.querySelectorAll("#heading > p, #content, nav > div, #about")) {
+    e.classList.toggle("dark-text");
+  }
+
+  for (const e of document.querySelectorAll("hr")) {
+    e.classList.toggle("dark-hr");
+  }
+
+  for (const e of document.querySelectorAll(".desc")) {
+    e.classList.toggle("dark-desc");
+  }
+
+  for (const e of document.querySelectorAll("button")) {
+    e.classList.toggle("dark-btn");
+  }
+
 }
