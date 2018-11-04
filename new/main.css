@@ -17,11 +17,9 @@ body {
 }
 
 .topbar {
-  background: linear-gradient(
-    90deg,
+  background: linear-gradient(90deg,
     rgba(100, 79, 233, 1) 0%,
-    rgba(110, 61, 187, 1) 100%
-  );
+    rgba(110, 61, 187, 1) 100%);
   height: 10px;
   width: 100%;
 }
@@ -111,7 +109,7 @@ nav {
 #cards {
   margin: auto auto;
   display: flex;
-  width: 80%;
+  width: 100%;
   flex-flow: wrap;
   justify-content: center;
   flex-direction: row;
@@ -124,10 +122,11 @@ nav {
   grid-template-areas:
     "icon"
     "desc";
-  grid-template-rows: 3fr 5fr;
   height: 300px;
   filter: drop-shadow(0 3px 2px #00000046);
   margin-bottom: 60px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .icon {
@@ -136,7 +135,7 @@ nav {
   align-items: center;
   justify-content: center;
   font-family: "Heebo", sans-serif;
-  height: 100%;
+  height: 100px;
   font-weight: 700;
   font-size: 28px;
   letter-spacing: 2px;
@@ -163,11 +162,15 @@ nav {
   text-justify: inter-word;
   line-height: 24px;
   font-size: 16px;
-  padding: 0 30px;
+  padding: 30px;
 }
 
 .desc:first-child {
   z-index: 0;
+}
+
+.ctn-btn {
+  margin-top: 30px;
 }
 
 #about-intro {
@@ -192,6 +195,7 @@ nav {
   text-align: center;
   margin: auto auto;
   margin-top: 35px;
+  border: solid 2px rgba(100, 79, 233, 1);
 }
 
 #hr-btm {
@@ -200,22 +204,27 @@ nav {
 
 .behance {
   background: linear-gradient(-45deg, #0a41a8b2, #2974ffc4);
+  border-color: #2974ffc4;
 }
 
 .youtube {
   background: linear-gradient(-45deg, #b90a0abb, #ff2929c5);
+  border-color: #ff2929c5;
 }
 
 .flickr {
   background: linear-gradient(-45deg, #4d0ab9c2, #db29ffb9);
+  border-color: #4d0ab9c2;
 }
 
 .soundcloud {
   background: linear-gradient(-45deg, #ff8800be, #fcc206cb);
+  border-color: #ff8800be;
 }
 
 .github {
   background: linear-gradient(-45deg, #575757, #7e7e7e);
+  border-color: #575757;
 }
 
 .title {
@@ -285,10 +294,10 @@ nav {
 
 .btn {
   border-radius: 30px 30px;
+  border-style: solid;
   font-family: "Heebo";
   font-weight: 600;
   font-size: 16px;
-  border: solid 2px rgba(100, 79, 233, 1);
   background-color: whitesmoke;
   padding: 15px 35px 15px 35px;
   cursor: pointer;
@@ -299,7 +308,6 @@ nav {
 
 .btn:hover {
   background-color: rgb(236, 236, 236);
-  border: solid 2px rgb(185, 141, 255);
   color: #818181;
   transition: cubic-bezier(0.13, 0.91, 0.37, 1) 0.3s;
 }
@@ -312,8 +320,8 @@ nav {
   z-index: 10;
   display: block;
   grid-area: desc;
-  border: none;
-  color: whitesmoke;
+  background: none;
+  border-width: 2px;
   letter-spacing: 2px;
   font-weight: 400;
 }
@@ -325,9 +333,9 @@ nav {
     font-size: 14px;
   }
 
-  .icon {
+  /* .icon {
     font-size: 18px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 1080px) {
@@ -409,7 +417,7 @@ nav {
     text-align-last: center;
   }
 
-  .desc > div {
+  .desc>div {
     max-width: 330px;
   }
 
@@ -420,7 +428,7 @@ nav {
     grid-template-columns: none;
     width: 100%;
     max-width: 500px;
-    margin-top: 60px;
+    margin-top: 10px;
     max-height: none;
     height: auto;
   }
