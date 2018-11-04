@@ -1,4 +1,4 @@
-let typeText = "Web Developer | Programmer | Graphics&nbsp;Designer | Musician";
+let typeText = "Web Developer | Programmer | Graphics\xa0Designer | Musician";
 let typeIterator = 0;
 
 window.onload = function () {

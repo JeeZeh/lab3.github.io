@@ -98,7 +98,16 @@ nav {
 
 .bottom {
   grid-area: footer;
-  margin-top: 100px;
+  margin-top: 50px;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .section {
@@ -154,10 +163,6 @@ nav {
   border: 0;
   border-radius: 8px 8px 0 0;
   transition: color 0.1s ease-out;
-}
-
-.icon:hover {
-  color: #3b3b3b;
 }
 
 .desc {
@@ -338,22 +343,6 @@ nav {
 }
 
 /* Responsive Rules */
-
-@media only screen and (max-width: 1200px) {
-  .desc {
-    font-size: 14px;
-  }
-
-  /* .icon {
-    font-size: 18px;
-  } */
-}
-
-@media only screen and (max-width: 1080px) {
-  .desc {
-    font-size: 14px;
-  }
-}
 
 @media only screen and (max-width: 800px) {
   #content {
