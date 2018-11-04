@@ -90,7 +90,24 @@
             </div>
         </div>
         <hr id="hr-btm" class="splitter bottom">
-        <button id="dark-toggle" class="btn btn-portfolio github" onclick="toggleDark();">Light/Dark</button>
+        <svg id="dark-mode" onclick="toggleDark();">
+            <title>Moon Symbol</title>
+            <defs>
+                <style type="text/css">
+                    #crescent {
+                        fill: none;
+                        stroke: #666;
+                        stroke-width: 3;
+                        stroke-linejoin: round;
+                    }
+                </style>
+            </defs>
+            <path id="crescent" d="
+             M 12.5,3.5 
+             a 22.5,22.5 0 0,1 0,43 
+             a 22.5,22.5 0 1,0 0,-43 z" />
+        </svg>
+
     </div>
 
 </body>

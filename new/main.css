@@ -56,12 +56,23 @@ nav {
 .selected::after {
   display: block;
   font-family: 'Courier New', Courier, monospace;
-  opacity: 0.5;
+  opacity: 0.3;
   font-weight: 300;
   margin-bottom: -30px;
-  margin-top: -10px;
+  margin-top: -8px;
   text-align: center;
   content: "^";
+}
+
+#dark-mode {
+  width: 50px;
+  height: 50px;
+  display: block;
+  cursor: pointer;
+  margin: auto auto;
+  grid-area: footer;
+  margin-top: 100px;
+  transform: rotate(40deg);
 }
 
 #content {
@@ -360,6 +371,7 @@ nav {
   font-weight: 500;
 }
 
+
 /* Responsive Rules */
 
 @media only screen and (max-width: 800px) {
@@ -459,7 +471,6 @@ nav {
   }
 }
 
-
 .dark-bg {
   background-color: #222;
 }
@@ -471,10 +482,3 @@ nav {
 .dark-hr {
   background-color: #555;
 }
-
-/* 
-TODO:
-- Justify text on cards
-- Update cards on desktop
-- Fix subtitle on mobile
- */
