@@ -284,10 +284,9 @@ nav {
   font-family: "Noto Sans", sans-serif;
   font-weight: 200;
   font-size: 18px;
-  margin-left: 43px;
   margin-top: -35px;
   animation: fadeIn 0.3s ease-in;
-  text-align: left;
+  text-align: center;
 }
 
 @keyframes fadeIn {
@@ -400,6 +399,7 @@ nav {
 
   .subtitle {
     text-align: center;
+    margin: auto auto;
     font-size: 14px;
     width: 80%;
     margin-top: -20px;
