@@ -286,7 +286,7 @@ nav {
   font-size: 18px;
   margin-top: -35px;
   animation: fadeIn 0.3s ease-in;
-  text-align: center;
+  margin-left: 95px;
 }
 
 @keyframes fadeIn {
