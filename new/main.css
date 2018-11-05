@@ -125,6 +125,7 @@ nav {
 .bottom {
   grid-area: footer;
   margin-top: 50px;
+  transition: all 0.2s;
 }
 
 .noselect {
