@@ -78,8 +78,9 @@ nav {
   cursor: pointer;
   margin: auto auto;
   grid-area: footer;
-  margin-top: 100px;
+  margin-top: 75px;
   transform: rotate(40deg);
+  transition: opacity 0.2s;
 }
 
 #content {
@@ -124,7 +125,7 @@ nav {
 
 .bottom {
   grid-area: footer;
-  margin-top: 50px;
+  margin: 0 auto;
   transition: all 0.2s;
 }
 
@@ -170,9 +171,9 @@ nav {
   grid-template-areas:
     "icon"
     "desc";
-  height: 300px;
+  height: auto;
   filter: drop-shadow(0 3px 2px #00000046);
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -233,6 +234,7 @@ nav {
   text-align: justify;
   text-justify: inter-word;
   text-align-last: center;
+  margin-bottom: 50px;
 }
 
 #interested {
@@ -361,7 +363,7 @@ nav {
 }
 
 .fade {
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .btn-portfolio {
