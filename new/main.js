@@ -1,14 +1,15 @@
-let typeText = "Web Developer | Programmer | Graphics\xa0Designer | Musician";
+let typeText = "";
+if (window.innerWidth <= 800)
+  typeText = "Web Developer | Programmer<br>Graphics\xa0Designer\xa0| Musician";
+else
+  typeText = "Web Developer | Programmer | Graphics\xa0Designer\xa0| Musician";
 let typeIterator = 0;
 
-
-
-window.onload = function () {
+window.onload = function() {
   let date = new Date();
   let time = date.getHours();
 
-  if (time >= 20 || time <= 8)
-    toggleDark();
+  if (time >= 20 || time <= 8) toggleDark();
   document.body.classList.toggle("hide");
   if (window.innerWidth > 1000) {
     this.setTimeout(() => {
@@ -67,7 +68,9 @@ function toggleDark() {
   document.body.classList.toggle("dark-bg");
   document.querySelector("#content").classList.toggle("dark-text");
 
-  for (const e of document.querySelectorAll("#heading > p, #content, nav > div, #about")) {
+  for (const e of document.querySelectorAll(
+    "#heading > p, #content, nav > div, #about"
+  )) {
     e.classList.toggle("dark-text");
   }
 
@@ -82,5 +85,4 @@ function toggleDark() {
   for (const e of document.querySelectorAll("button")) {
     e.classList.toggle("dark-btn");
   }
-
 }

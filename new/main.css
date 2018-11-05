@@ -16,11 +16,9 @@ body {
 }
 
 .topbar {
-  background: linear-gradient(
-    90deg,
+  background: linear-gradient(90deg,
     rgba(100, 79, 233, 1) 0%,
-    rgba(110, 61, 187, 1) 100%
-  );
+    rgba(110, 61, 187, 1) 100%);
   height: 10px;
   width: 100%;
 }
@@ -392,7 +390,8 @@ nav {
 
   .title {
     font-size: 60px;
-    margin: 20px 20px;
+    margin: 30px 20px;
+    margin-top: -10px;
     line-height: 65px;
   }
 
@@ -442,7 +441,7 @@ nav {
     /* text-align-last: center; */
   }
 
-  .desc > div {
+  .desc>div {
     max-width: 330px;
   }
 
