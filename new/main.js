@@ -43,6 +43,7 @@ function typeIt(element, speed) {
 function switchTabs(target) {
   let activeTab = document.querySelector(".active");
   let hr = document.querySelector("#hr-btm");
+  let dark = document.querySelector("#dark-mode");
   document.querySelector(".selected").classList.toggle("selected");
   document
     .querySelector("#btn-" + target.id.split("-")[1])
@@ -50,6 +51,7 @@ function switchTabs(target) {
   if (activeTab != target) {
     activeTab.classList.toggle("fade");
     hr.classList.toggle("fade");
+    dark.classList.toggle("fade");
     setTimeout(() => {
       activeTab.classList.toggle("active");
       activeTab.classList.toggle("hide");
@@ -57,6 +59,7 @@ function switchTabs(target) {
       setTimeout(() => {
         target.classList.toggle("fade");
         hr.classList.toggle("fade");
+        dark.classList.toggle("fade");
 
         target.classList.toggle("active");
       }, 50);
