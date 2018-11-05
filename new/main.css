@@ -13,6 +13,11 @@ body {
   background-color: rgb(250, 250, 250);
   padding-bottom: 100px;
   animation: fadeIn 0.5s ease-out;
+  transition: background-color 0.15s ease-in-out;
+}
+
+hr {
+  transition: background-color 0.2s ease-in-out;
 }
 
 .topbar {
@@ -241,11 +246,6 @@ nav {
   letter-spacing: 1.2px;
   margin-top: 35px;
 }
-
-#hr-btm {
-  transition: opacity 0.25s ease-out;
-}
-
 .behance {
   background: linear-gradient(-45deg, #0a41a8b2, #2974ffc4);
   border-color: #2974ffc4 !important;
