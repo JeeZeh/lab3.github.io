@@ -60,7 +60,6 @@ function switchTabs(target) {
         target.classList.toggle("fade");
         hr.classList.toggle("fade");
         dark.classList.toggle("fade");
-
         target.classList.toggle("active");
       }, 50);
     }, 200);

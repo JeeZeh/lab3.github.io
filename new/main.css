@@ -203,8 +203,7 @@ nav {
   border: 0;
   border-radius: 0 0 8px 8px;
   font-family: "Noto Sans", sans-serif;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
   line-height: 24px;
   font-size: 16px;
   padding: 30px;
