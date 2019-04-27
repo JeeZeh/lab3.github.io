@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,700,800|Noto+Sans:400,400i,700|Heebo:100,300,400,500,700,800,900");
+@import url('https://fonts.googleapis.com/css?family=Asap:400,400i,500,500i,600,600i,700,700i');
 
 * {
   margin: 0;
@@ -7,6 +8,7 @@
 
 a {
   text-decoration: none;
+  color: #4e7cc4;
 }
 
 body {
@@ -200,7 +202,7 @@ nav {
   background-color: rgb(240, 240, 240);
   border: 0;
   border-radius: 0 0 8px 8px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Asap', sans-serif;
   text-align: center;
   line-height: 24px;
   font-size: 16px;
@@ -227,7 +229,7 @@ nav {
 }
 
 #about {
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Asap', sans-serif;
   text-align: justify;
   text-justify: inter-word;
   text-align-last: center;
@@ -282,7 +284,7 @@ nav {
 }
 
 .subtitle {
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Asap', sans-serif;
   font-weight: 200;
   font-size: 18px;
   margin-top: -35px;
