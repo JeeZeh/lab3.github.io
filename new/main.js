@@ -1,12 +1,3 @@
-// Object mapping dark classes to their selectors
-const DARK_QUERIES = {
-  "dark-text": "#heading > p, #content, nav > div, #about",
-  "dark-hr": "hr",
-  "dark-desc": ".desc",
-  "dark-btn": "button",
-  "dark-bg": "body",
-}
-
 let typeText = "";
 if (window.innerWidth <= 800)
   typeText = "Web Developer | Programmer<br>Graphics\xa0Designer\xa0| Musician";
@@ -76,9 +67,7 @@ function switchTabs(target) {
 }
 
 function toggleDark() {
-  for (const darkClass in DARK_QUERIES) {
-    for (const element of document.querySelectorAll(DARK_QUERIES[darkClass])) {
-      element.classList.toggle(darkClass);
-    }
-  }
+  document.querySelector('body').classList.toggle('dark');
 }
+
+/* --- Beep Boop --- */
