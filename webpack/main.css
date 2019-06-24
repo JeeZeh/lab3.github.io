@@ -229,6 +229,11 @@ nav {
   color: whitesmoke;
 }
 
+.dark #toast {
+  background-color: hsla(0, 0%, 13%, 0.664);
+  color: whitesmoke;
+}
+
 .dark .hr {
   background-color: #555;
 }
@@ -309,6 +314,58 @@ nav {
   margin-top: -35px;
   animation: fadeIn 0.3s ease-in;
   margin-left: 95px;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#toast {
+  visibility: hidden;
+  margin: auto;
+  width: 150px;
+  margin-left: -105px;
+  background-color: hsla(0, 0%, 100%, 0.918);
+  color: #222222;
+  text-align: center;
+  border: 2px solid #575757;
+  border-radius: 30px 30px;
+  position: fixed;
+  z-index: 1;
+  font-family: "Heebo";
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 35px 15px 35px;
+  bottom: 50px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#toast.show {
+  visibility: visible;
+  animation: toastup 0.5s, toastdown 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@keyframes toastup {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes toastdown {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeIn {
