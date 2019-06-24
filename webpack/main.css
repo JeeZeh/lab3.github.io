@@ -319,9 +319,9 @@ nav {
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #toast {
   visibility: hidden;
-  margin: auto;
-  width: 150px;
-  margin-left: -105px;
+  width: 220px;
+  margin-left: -140px;
+  left: 50%;
   background-color: hsla(0, 0%, 100%, 0.918);
   color: #222222;
   text-align: center;
@@ -351,14 +351,14 @@ nav {
   }
 
   to {
-    bottom: 30px;
+    bottom: 50px;
     opacity: 1;
   }
 }
 
 @keyframes toastdown {
   from {
-    bottom: 30px;
+    bottom: 50px;
     opacity: 1;
   }
 
