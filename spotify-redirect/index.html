@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Spotify Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      const url = new URL("https://open.spotify.com/spotify/album/1PiNNKkZMGbYquCk1o3Tac?highlight=spotify:track:6elxcYSSZkWhFOLydy8eAv");
+      const spotifyUri = url.pathname.split("/").slice(2);
+      const itemType = spotifyUri[0];
+      const itemUri = spotifyUri[1];
+
+      if (spotifyUri.length == 2) {
+        window.location.replace(`spotify:${itemType}:${itemUri}`);
+      }
+
+      window.location.replace(
+        `https://open.spotify.com/${itemType}/${itemUri}`
+      );
+    </script>
+  </body>
+</html>
