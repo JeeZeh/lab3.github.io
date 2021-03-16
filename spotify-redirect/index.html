@@ -6,9 +6,18 @@
     <title>Spotify Redirect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <style>
+    * {
+      font-family: Helvetica, Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+  </style>
+  <body onclick="window.close();" style="background-color: #333;">
     <script>
-      const url = new URL("https://open.spotify.com/spotify/album/1PiNNKkZMGbYquCk1o3Tac?highlight=spotify:track:6elxcYSSZkWhFOLydy8eAv");
+      const url = new URL(
+        "https://open.spotify.com/spotify/album/1PiNNKkZMGbYquCk1o3Tac?highlight=spotify:track:6elxcYSSZkWhFOLydy8eAv"
+      );
       const spotifyUri = url.pathname.split("/").slice(2);
       const itemType = spotifyUri[0];
       const itemUri = spotifyUri[1];
@@ -16,10 +25,7 @@
       if (spotifyUri.length == 2) {
         window.location.replace(`spotify:${itemType}:${itemUri}`);
       }
-
-      window.location.replace(
-        `https://open.spotify.com/${itemType}/${itemUri}`
-      );
     </script>
+    <h3 style="color: #eee;">Click or tap anywhere to close.</h3>
   </body>
 </html>
