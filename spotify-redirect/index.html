@@ -47,6 +47,10 @@
       window.close();
     });
 
+    const url = new URL(window.location);
+    const itemType = url.searchParams.get("type");
+    const itemUri = url.searchParams.get("item");
+
     document.getElementById("spotify").addEventListener("click", (event) => {
       event.stopPropagation();
 
@@ -55,11 +59,8 @@
       );
     });
 
-    const url = new URL(window.location);
-    const itemType = url.searchParams.get("type");
-    const itemUri = url.searchParams.get("item");
 
-    if (spotifyUri.length == 2) {
+    if (itemType && itemUri) {
       window.location.replace(`spotify:${itemType}:${itemUri}`);
     }
   </script>
