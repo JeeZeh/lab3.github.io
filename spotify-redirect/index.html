@@ -8,7 +8,8 @@
   </head>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+        Arial, sans-serif;
       text-align: center;
       height: 100vh;
     }
@@ -54,12 +55,9 @@
       );
     });
 
-    const url = new URL(
-      "https://open.spotify.com/spotify/album/1PiNNKkZMGbYquCk1o3Tac?highlight=spotify:track:6elxcYSSZkWhFOLydy8eAv"
-    );
-    const spotifyUri = url.pathname.split("/").slice(2);
-    const itemType = spotifyUri[0];
-    const itemUri = spotifyUri[1];
+    const url = new URL(window.location);
+    const itemType = url.searchParams.get("type");
+    const itemUri = url.searchParams.get("item");
 
     if (spotifyUri.length == 2) {
       window.location.replace(`spotify:${itemType}:${itemUri}`);
