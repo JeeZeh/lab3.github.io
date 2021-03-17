@@ -7,25 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <style>
-    * {
-      font-family: Helvetica, Arial, sans-serif;
+    body {
       text-align: center;
+      height: 100vh;
+    }
+
+    h3 {
+      font-family: Helvetica, Arial, sans-serif;
       padding-top: 100px;
+      line-height: 40px;
+    }
+
+    button {
+      text-transform: uppercase;
+      padding: 20px;
+      background-color: #1db954;
+      border: none;
+      border-radius: 20px;
+      color: whitesmoke;
+      font-weight: 700;
+      font-size: large;
+      box-shadow: #23994c38 0px 8px 10px;
+      cursor: pointer;
+    }
+
+    body {
+      background-color: rgb(28, 34, 33);
     }
   </style>
-  <body onclick="window.close();" style="background-color: #333;">
-    <script>
-      const url = new URL(
-        "https://open.spotify.com/spotify/album/1PiNNKkZMGbYquCk1o3Tac?highlight=spotify:track:6elxcYSSZkWhFOLydy8eAv"
-      );
-      const spotifyUri = url.pathname.split("/").slice(2);
-      const itemType = spotifyUri[0];
-      const itemUri = spotifyUri[1];
 
-      if (spotifyUri.length == 2) {
-        window.location.replace(`spotify:${itemType}:${itemUri}`);
-      }
-    </script>
-    <h3 style="color: #eee;">Click or tap anywhere to close.</h3>
+  <body>
+    <h3 style="color: #eee">Click or tap anywhere to close<br />or</h3>
+    <button id="spotify" type="button">Open Spotify Website</button>
   </body>
+
+  <script>
+    document.body.addEventListener("click", (event) => {
+      window.close();
+    });
+
+    document.getElementById("spotify").addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      window.location.replace(
+        `https://open.spotify.com/${itemType}/${itemUri}`
+      );
+    });
+
+    const url = new URL(
+      "https://open.spotify.com/spotify/album/1PiNNKkZMGbYquCk1o3Tac?highlight=spotify:track:6elxcYSSZkWhFOLydy8eAv"
+    );
+    const spotifyUri = url.pathname.split("/").slice(2);
+    const itemType = spotifyUri[0];
+    const itemUri = spotifyUri[1];
+
+    if (spotifyUri.length == 2) {
+      window.location.replace(`spotify:${itemType}:${itemUri}`);
+    }
+  </script>
 </html>
