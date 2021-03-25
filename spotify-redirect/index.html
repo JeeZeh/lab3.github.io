@@ -15,6 +15,11 @@
       cursor: default;
     }
 
+    p {
+      font-style: italic;
+      font-weight: bold;
+    }
+
     h3 {
       padding-top: 100px;
       line-height: 40px;
@@ -41,6 +46,7 @@
   <body>
     <h3 style="color: #eee">Click or tap anywhere to close<br />or</h3>
     <button id="spotify" type="button">Open Spotify Website</button>
+    <p id="timer">Page will close automatically in 15s</p>
   </body>
 
   <script>
@@ -60,9 +66,21 @@
       );
     });
 
-
     if (itemType && itemUri) {
       window.location.replace(`spotify:${itemType}:${itemUri}`);
     }
+
+    let timer = 15;
+    const timerElement = document.getElementById("timer");
+
+    setInterval(() => {
+      if (timer <= 0) {
+        window.close();
+      }
+      timer -= 1;
+      timerElement.innerText = `Page will close automatically in ${timer}s${
+        timer < 0 ? " - wait, that doesn't look right" : ""
+      }`;
+    }, 1000);
   </script>
 </html>
